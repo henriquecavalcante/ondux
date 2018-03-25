@@ -72,6 +72,7 @@ target/
 
 # pyenv
 .python-version
+pyvenv.cfg
 
 # celery beat schedule file
 celerybeat-schedule
@@ -99,3 +100,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# VS Code
+.vscode/
