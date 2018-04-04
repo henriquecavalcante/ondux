@@ -1,15 +1,9 @@
-import os, sys
 import logging
-import  unicodedata
+import os
+import sys
+import unicodedata
 import xml.etree.ElementTree as ET
 
-def parse_kb(kb_file):
-    '''Parse Knowledge Base and prepare it to extract
-    the content-based features'''
-    tree = ET.parse(kb_file)
-    root = tree.getroot()
-    for item in root:
-        print(clear_string(item.tag), clear_string(item.text))
 
 def read_input(input_file):
     '''Read input file containing data to be extracted'''

@@ -3,12 +3,11 @@ import os
 import sys
 
 from utils import functions
+from learning.KnowledgeBase import KnowledgeBase
 
-
-def get_cb_features(knowledge_base):
-    '''Get content-based features learned from knowledge
-    base'''
-    functions.parse_kb(knowledge_base)
+def create_kb(kb):
+    '''Create knowledge base from the input file'''
+    KnowledgeBase(kb)
 
 def run_blocking():
     '''Segment input string in units called blocks'''
@@ -26,7 +25,7 @@ def run_reinforcement():
 
 def main(knowledge_base=None, input_file=None):
     '''Run ONDUX extraction steps'''
-    get_cb_features(knowledge_base)
+    create_kb(knowledge_base)
     # F.read_input(input_file)
     # run_blocking()
     # run_matching()
