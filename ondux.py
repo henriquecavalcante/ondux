@@ -3,7 +3,7 @@ import os
 import sys
 
 from utils import functions
-from learning.KnowledgeBase import KnowledgeBase
+from learning.knowledge_base import KnowledgeBase
 
 def create_kb(kb):
     '''Create knowledge base from the input file'''

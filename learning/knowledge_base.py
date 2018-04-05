@@ -1,7 +1,7 @@
 import sys
 import xml.etree.ElementTree as ET
 
-from .Occurrence import Occurrence
+from .occurrence import Occurrence
 from utils import functions as F
 
 
@@ -28,17 +28,10 @@ class KnowledgeBase:
             occurrence = Occurrence(term)
 
             if attribute in self.base:
-                has_term = False
-                term_index = -1
-                temp = self.base[attribute]
-                for index, obj in enumerate(temp):
-                    if term in obj.term:
-                        has_term = True
-                        term_index = index
-
-                if has_term:
-                    self.base[attribute][term_index].number += 1
-                else:
+                if term not in [obj.term for obj in self.base[attribute]]:
                     self.base[attribute].append(occurrence)
+                else:
+                    occ = [v for v in self.base[attribute] if v.term == term]
+                    occ[0].number += 1
             else:
                 self.base[attribute] = [occurrence]
