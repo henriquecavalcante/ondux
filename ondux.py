@@ -1,13 +1,19 @@
 import logging
 import os
 import sys
+from pprint import pprint
 
-from utils import functions
+from learning.content_based import attribute_frequency
 from learning.knowledge_base import KnowledgeBase
 
-def create_kb(kb):
+
+def create_k_base(kb):
     '''Create knowledge base from the input file'''
-    KnowledgeBase(kb)
+    return KnowledgeBase(kb)
+
+def extract_content_based_features(k_base):
+    '''Create knowledge base from the input file'''
+    attribute_frequency('centro', 'bairro', k_base)
 
 def run_blocking():
     '''Segment input string in units called blocks'''
@@ -25,11 +31,8 @@ def run_reinforcement():
 
 def main(knowledge_base=None, input_file=None):
     '''Run ONDUX extraction steps'''
-    create_kb(knowledge_base)
-    # F.read_input(input_file)
-    # run_blocking()
-    # run_matching()
-    # run_reinforcement()
+    k_base = create_k_base(knowledge_base)
+    extract_content_based_features(k_base)
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
