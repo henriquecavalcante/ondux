@@ -5,7 +5,9 @@ from pprint import pprint
 
 from learning.content_based import attribute_frequency
 from learning.knowledge_base import KnowledgeBase
+from utils import log_settings
 
+logger = log_settings.initialize_logs(__name__)
 
 def create_k_base(kb):
     '''Create knowledge base from the input file'''
@@ -31,7 +33,10 @@ def run_reinforcement():
 
 def main(knowledge_base=None, input_file=None):
     '''Run ONDUX extraction steps'''
+    logger.info('creating knowledge base')
     k_base = create_k_base(knowledge_base)
+
+    logger.info('extracting content-based features from knowledge base')
     extract_content_based_features(k_base)
 
 if __name__ == "__main__":

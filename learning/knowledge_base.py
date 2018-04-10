@@ -1,13 +1,16 @@
+import logging
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter
 from pprint import pprint
 
 from utils import functions as F
+from utils import log_settings
 
 from .inverted_index import InvertedIndex
 from .occurrence import Occurrence
 
+logger = log_settings.initialize_logs(__name__)
 
 class KnowledgeBase:
     """A KnowledgeBase has the following properties:
@@ -27,6 +30,7 @@ class KnowledgeBase:
     def init_kb(self, kb_file):
         '''Parse Knowledge Base and prepare it to extract
         the content-based features'''
+        logger.debug('parsing knowlede base file')
         tree = ET.parse(kb_file)
         root = tree.getroot()
         for item in root:
