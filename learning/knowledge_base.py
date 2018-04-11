@@ -1,8 +1,10 @@
 import logging
+import re
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter
 from pprint import pprint
+import statistics
 
 from utils import functions as F
 from utils import log_settings
@@ -69,3 +71,13 @@ class KnowledgeBase:
         for key in keys:
             occ += len(self.inverted_k_base[key])
         return occ
+
+    def get_values_average(self, attribute):
+        '''Get the average of numeric values of an attribute A'''
+        numeric_values = [int(num) for num in self.get_terms_by_attribute(attribute) if re.match(r'^\d+$', num)]
+        return statistics.mean(numeric_values)
+
+    def get_values_standard_deviation(self, attribute):
+        '''Get the standard deviation of numeric values of an attribute A'''
+        numeric_values = [int(num) for num in self.get_terms_by_attribute(attribute) if re.match(r'^\d+$', num)]
+        return statistics.stdev(numeric_values)

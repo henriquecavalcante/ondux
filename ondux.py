@@ -3,7 +3,7 @@ import os
 import sys
 from pprint import pprint
 
-from learning.content_based import attribute_frequency
+from learning.content_based import attribute_frequency, numeric_matching
 from learning.knowledge_base import KnowledgeBase
 from utils import log_settings
 
@@ -15,7 +15,8 @@ def create_k_base(kb):
 
 def extract_content_based_features(k_base):
     '''Create knowledge base from the input file'''
-    attribute_frequency('centro', 'bairro', k_base)
+    # attribute_frequency('centro', 'bairro', k_base)
+    numeric_matching(1, 'valor', k_base)
 
 def run_blocking():
     '''Segment input string in units called blocks'''

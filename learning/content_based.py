@@ -1,3 +1,4 @@
+import math
 import os
 import sys
 from collections import Counter
@@ -29,5 +30,16 @@ def fitness(term, attribute, k_base):
     f_max = k_base.get_most_common_term_by_attribute(attribute)
     n_t = k_base.get_term_occurrence_number(term)
 
-    similarity = (f_ta/n_t)*(f_ta/f_max[1])
-    print(similarity)
+    return (f_ta/n_t)*(f_ta/f_max[1])
+
+def numeric_matching(canditate_value, attribute, k_base):
+    ''' Calculate the similarity between a numeric value present in a
+    candidate value S and the set of values of an attribute A
+
+    Properties:
+        attr_avg: average of the values of an attribute A
+        attr_stdev: standard deviation of the values of an attribute A
+    '''
+    attr_avg = k_base.get_values_average(attribute)
+    attr_stdev = k_base.get_values_standard_deviation(attribute)
+    print(math.exp((canditate_value - attr_avg)/(2 * math.pow(attr_stdev, 2.0))))
