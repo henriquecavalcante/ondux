@@ -37,17 +37,19 @@ class KnowledgeBase:
         root = tree.getroot()
         for item in root:
             attribute = F.normalize_str(item.tag)
-            term = F.normalize_str(item.text)
-            occurrence = Occurrence(term)
+            value = F.remove_stop_words(F.normalize_str(item.text))
 
-            if attribute in self.k_base:
-                if term not in [obj.term for obj in self.k_base[attribute]]:
-                    self.k_base[attribute].append(occurrence)
+            for term in value:
+                occurrence = Occurrence(term)
+
+                if attribute in self.k_base:
+                    if term not in [obj.term for obj in self.k_base[attribute]]:
+                        self.k_base[attribute].append(occurrence)
+                    else:
+                        occ = [v for v in self.k_base[attribute] if v.term == term]
+                        occ[0].number += 1
                 else:
-                    occ = [v for v in self.k_base[attribute] if v.term == term]
-                    occ[0].number += 1
-            else:
-                self.k_base[attribute] = [occurrence]
+                    self.k_base[attribute] = [occurrence]
 
     def get_terms_by_attribute(self, attr):
         '''Get the list of terms of an attribute'''
@@ -58,19 +60,22 @@ class KnowledgeBase:
 
     def get_most_common_term_by_attribute(self, attr):
         '''Get the highest frequency of any term among the values of A'''
-        return Counter(self.get_terms_by_attribute(attr)).most_common(1)[0]
+        terms = [v for v in self.k_base[attr]]
+        return max(x.number for x in terms)
 
     def get_term_frequency_by_attribute(self, term, attr):
-        '''Get the number of distinct values of attribute that contain the term t'''
-        return self.get_terms_by_attribute(attr).count(term)
+        '''Get the number of distinct values of attribute A that contain the term t'''
+        terms = [v for v in self.k_base[attr] if v.term == term]
+        return terms[0].number
 
     def get_term_occurrence_number(self, term):
         '''Get the total number of occurrences of the term t in all attributes'''
         occ = 0
-        keys = [k for k in self.inverted_k_base if term in k]
-        for key in keys:
-            occ += len(self.inverted_k_base[key])
-        return occ
+        if term in self.inverted_k_base:
+            for freq in self.inverted_k_base[term]:
+                occ += freq[1]
+            return occ
+        return 0
 
     def get_values_average(self, attribute):
         '''Get the average of numeric values of an attribute A'''

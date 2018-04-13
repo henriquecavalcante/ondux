@@ -13,11 +13,11 @@ class InvertedIndex:
 
     def __init__(self, k_base):
         """Return a Knowledge Base object"""
-        self.inverted_k_base = defaultdict(list)
+        self.inverted_k_base = defaultdict()
         self.create_inverted_k_base(k_base)
 
     def create_inverted_k_base(self, k_base):
         '''Create an inverted dict from the Knowledge Base'''
         for attribute in k_base:
             for occ in k_base[attribute]:
-                self.inverted_k_base.setdefault(occ.term, []).append(attribute)
+                self.inverted_k_base.setdefault(occ.term, []).append((attribute, occ.number))

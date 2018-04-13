@@ -15,8 +15,8 @@ def create_k_base(kb):
 
 def extract_content_based_features(k_base):
     '''Create knowledge base from the input file'''
-    # attribute_frequency('centro', 'bairro', k_base)
-    numeric_matching(1, 'valor', k_base)
+    print(attribute_frequency('regent square', 'neighborhood', k_base))
+    # numeric_matching(1, 'valor', k_base)
 
 def run_blocking():
     '''Segment input string in units called blocks'''
