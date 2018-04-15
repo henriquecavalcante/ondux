@@ -16,10 +16,11 @@ def create_k_base(kb):
 def extract_content_based_features(k_base):
     '''Create knowledge base from the input file'''
     print(attribute_frequency('regent square', 'neighborhood', k_base))
-    # numeric_matching(1, 'valor', k_base)
+    print(numeric_matching(1921092, 'phone', k_base))
 
 def run_blocking():
     '''Segment input string in units called blocks'''
+    input_str = 'Regent Square $228,900 1028 Mifflin Ave.; 6 Bedrooms; 2 Bathrooms. 414-638-7273'
     pass
 
 def run_matching():

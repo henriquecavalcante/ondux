@@ -1,7 +1,7 @@
 import math
 import os
-import sys
 import re
+import sys
 from collections import Counter
 from pprint import pprint
 
@@ -32,7 +32,6 @@ def fitness(term, attribute, k_base):
     f_ta = k_base.get_term_frequency_by_attribute(term, attribute)
     f_max = k_base.get_most_common_term_by_attribute(attribute)
     n_t = k_base.get_term_occurrence_number(term)
-
     return (f_ta/n_t)*(f_ta/f_max)
 
 def numeric_matching(canditate_value, attribute, k_base):
@@ -43,6 +42,6 @@ def numeric_matching(canditate_value, attribute, k_base):
         attr_avg: average of the values of an attribute A
         attr_stdev: standard deviation of the values of an attribute A
     '''
-    attr_avg = k_base.get_values_average(attribute)
-    attr_stdev = k_base.get_values_standard_deviation(attribute)
-    return math.exp((canditate_value - attr_avg)/(2 * math.pow(attr_stdev, 2.0)))
+    attr_avg = round(k_base.get_values_average(attribute))
+    attr_stdev = round(k_base.get_values_standard_deviation(attribute))
+    return math.exp(-(math.pow((canditate_value - attr_avg), 2.0)/(2 * math.pow(attr_stdev, 2.0))))

@@ -1,10 +1,10 @@
 import logging
 import re
+import statistics
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter
 from pprint import pprint
-import statistics
 
 from utils import functions as F
 from utils import log_settings
@@ -28,6 +28,7 @@ class KnowledgeBase:
         self.k_base = {}
         self.init_kb(kb_file)
         self.inverted_k_base = InvertedIndex(self.k_base).inverted_k_base
+        pprint(self.inverted_k_base)
 
     def init_kb(self, kb_file):
         '''Parse Knowledge Base and prepare it to extract
@@ -51,17 +52,10 @@ class KnowledgeBase:
                 else:
                     self.k_base[attribute] = [occurrence]
 
-    def get_terms_by_attribute(self, attr):
-        '''Get the list of terms of an attribute'''
-        attr_terms = []
-        for attr in self.k_base[F.normalize_str(attr)]:
-            attr_terms += attr.term.split()
-        return attr_terms
-
     def get_most_common_term_by_attribute(self, attr):
         '''Get the highest frequency of any term among the values of A'''
         terms = [v for v in self.k_base[attr]]
-        return max(x.number for x in terms)
+        return max(x.number for x in terms if x.term)
 
     def get_term_frequency_by_attribute(self, term, attr):
         '''Get the number of distinct values of attribute A that contain the term t'''
@@ -79,10 +73,11 @@ class KnowledgeBase:
 
     def get_values_average(self, attribute):
         '''Get the average of numeric values of an attribute A'''
-        numeric_values = [int(num) for num in self.get_terms_by_attribute(attribute) if re.match(r'^\d+$', num)]
+        numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
+        pprint(numeric_values)
         return statistics.mean(numeric_values)
 
     def get_values_standard_deviation(self, attribute):
         '''Get the standard deviation of numeric values of an attribute A'''
-        numeric_values = [int(num) for num in self.get_terms_by_attribute(attribute) if re.match(r'^\d+$', num)]
+        numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
         return statistics.stdev(numeric_values)
