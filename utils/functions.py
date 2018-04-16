@@ -9,9 +9,8 @@ import xml.etree.ElementTree as ET
 
 def read_input(input_file):
     '''Read input file containing data to be extracted'''
-    with open(input_file) as f:
-        contents = f.read()
-        print(contents)
+    with open(input_file, 'r') as f:
+        return f.read().splitlines()
 
 def normalize_str(input_str):
     '''Transform string to lowercase, remove special chars,

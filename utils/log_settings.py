@@ -1,5 +1,6 @@
 import logging
 
+
 def initialize_logs(name):
     '''Initialize global log handler'''
     logger = logging.getLogger(name)

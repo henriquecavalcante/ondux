@@ -28,7 +28,6 @@ class KnowledgeBase:
         self.k_base = {}
         self.init_kb(kb_file)
         self.inverted_k_base = InvertedIndex(self.k_base).inverted_k_base
-        pprint(self.inverted_k_base)
 
     def init_kb(self, kb_file):
         '''Parse Knowledge Base and prepare it to extract
@@ -74,7 +73,6 @@ class KnowledgeBase:
     def get_values_average(self, attribute):
         '''Get the average of numeric values of an attribute A'''
         numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
-        pprint(numeric_values)
         return statistics.mean(numeric_values)
 
     def get_values_standard_deviation(self, attribute):

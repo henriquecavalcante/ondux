@@ -3,6 +3,7 @@ import os
 import sys
 from pprint import pprint
 
+from blocking.blocking import extract_blocks
 from learning.content_based import attribute_frequency, numeric_matching
 from learning.knowledge_base import KnowledgeBase
 from utils import log_settings
@@ -18,10 +19,9 @@ def extract_content_based_features(k_base):
     print(attribute_frequency('regent square', 'neighborhood', k_base))
     print(numeric_matching(1921092, 'phone', k_base))
 
-def run_blocking():
-    '''Segment input string in units called blocks'''
-    input_str = 'Regent Square $228,900 1028 Mifflin Ave.; 6 Bedrooms; 2 Bathrooms. 414-638-7273'
-    pass
+def run_blocking(input_file, k_base):
+    '''Segment input file in units called blocks'''
+    pprint(extract_blocks(input_file, k_base))
 
 def run_matching():
     '''Associate blocks to labels using content-based
@@ -38,8 +38,11 @@ def main(knowledge_base=None, input_file=None):
     logger.info('creating knowledge base')
     k_base = create_k_base(knowledge_base)
 
-    logger.info('extracting content-based features from knowledge base')
-    extract_content_based_features(k_base)
+    # logger.info('extracting content-based features from knowledge base')
+    # extract_content_based_features(k_base)
+
+    logger.info('running blocking step over input file')
+    run_blocking(input_file, k_base)
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])
