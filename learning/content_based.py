@@ -30,9 +30,11 @@ def fitness(term, attribute, k_base):
         n_t: total number of occurrences of the term t in all attributes
     '''
     f_ta = k_base.get_term_frequency_by_attribute(term, attribute)
-    f_max = k_base.get_most_common_term_by_attribute(attribute)
-    n_t = k_base.get_term_occurrence_number(term)
-    return (f_ta/n_t)*(f_ta/f_max)
+    if f_ta > 0:
+        f_max = k_base.get_most_common_term_by_attribute(attribute)
+        n_t = k_base.get_term_occurrence_number(term)
+        return (f_ta/n_t)*(f_ta/f_max)
+    return 0
 
 def numeric_matching(canditate_value, attribute, k_base):
     ''' Calculate the similarity between a numeric value present in a

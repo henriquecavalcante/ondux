@@ -51,6 +51,10 @@ class KnowledgeBase:
                 else:
                     self.k_base[attribute] = [occurrence]
 
+    def get_attributes(self):
+        '''Get a list with all attributes in the Knowledge Base'''
+        return [v for v in self.k_base.keys()]
+
     def get_most_common_term_by_attribute(self, attr):
         '''Get the highest frequency of any term among the values of A'''
         terms = [v for v in self.k_base[attr]]
@@ -59,7 +63,9 @@ class KnowledgeBase:
     def get_term_frequency_by_attribute(self, term, attr):
         '''Get the number of distinct values of attribute A that contain the term t'''
         terms = [v for v in self.k_base[attr] if v.term == term]
-        return terms[0].number
+        if terms:
+            return terms[0].number
+        return 0
 
     def get_term_occurrence_number(self, term):
         '''Get the total number of occurrences of the term t in all attributes'''
