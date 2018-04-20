@@ -25,7 +25,10 @@ def classify_block(block, k_base):
     label = "none"
     attr_list = k_base.get_attributes()
     for attr in attr_list:
-        score = attribute_frequency(block, attr, k_base)
+        if block.isdigit():
+            score = numeric_matching(block, attr, k_base)
+        else:
+            score = attribute_frequency(block, attr, k_base)
         if score > max_score:
             max_score = score
             label = attr

@@ -79,9 +79,13 @@ class KnowledgeBase:
     def get_values_average(self, attribute):
         '''Get the average of numeric values of an attribute A'''
         numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
-        return statistics.mean(numeric_values)
+        if len(numeric_values) > 0:
+            return statistics.mean(numeric_values)
+        return 0
 
     def get_values_standard_deviation(self, attribute):
         '''Get the standard deviation of numeric values of an attribute A'''
         numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
-        return statistics.stdev(numeric_values)
+        if len(numeric_values) > 1:
+            return statistics.stdev(numeric_values)
+        return 0

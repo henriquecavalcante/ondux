@@ -46,4 +46,6 @@ def numeric_matching(canditate_value, attribute, k_base):
     '''
     attr_avg = round(k_base.get_values_average(attribute))
     attr_stdev = round(k_base.get_values_standard_deviation(attribute))
-    return math.exp(-(math.pow((canditate_value - attr_avg), 2.0)/(2 * math.pow(attr_stdev, 2.0))))
+    if attr_avg > 0 and attr_stdev > 0:
+        return math.exp(-(math.pow((int(canditate_value) - attr_avg), 2.0)/(2 * math.pow(attr_stdev, 2.0))))
+    return 0
