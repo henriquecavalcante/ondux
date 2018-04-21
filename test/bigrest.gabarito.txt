@@ -1,0 +1,239 @@
+<name>ALEJO'S PRESTO TRATTORIA</name><street>4002 Lincoln Blvd.</street><city>Marina del Rey</city><phone>(310) 822-0095</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>8343 Lincoln Blvd.</street><city>Westchester</city><phone>(310) 670-6677</phone>
+<name>BAJA BUD'S</name><street>1315 Third Street Promenade</street><city>Santa Monica</city><phone>(310) 393-6060</phone>
+<name>JAMAICAN CAFE</name><street>424 Wilshire Blvd.</street><city>Santa Monica</city><phone>(310) 587-2626</phone>
+<name>KILLER SHRIMP</name><street>523 Washington Blvd.</street><city>Marina del Rey</city><phone>(310) 578-2293</phone>
+<name>KILLER SHRIMP</name><street>403 N. Pacific Coast Hwy.</street><city>Redondo Beach</city><phone>(310) 798-0008</phone>
+<name>LA CABANA</name><street>738 Rose Ave.</street><city>Venice</city><phone>(310) 392-6161</phone>
+<name>CHAN DARETTE</name><street>13490 Maxella Ave.</street><city>Marina Del Rey</city><phone>(310) 301-1004</phone>
+<name>CURRY HOUSE</name><street>21215 Hawthorne Blvd.</street><city>Torrance</city><phone>(310) 540-8980</phone>
+<name>DANDELION CAFE</name><street>636 Venice Blvd.</street><city>Venice</city><phone>(310) 821-4890</phone>
+<name>DUKE'S MALIBU</name><street>21150 Pacific Coast Hwy</street><city>Malibu</city><phone>(310) 317-0777</phone>
+<name>EAT PANINI</name><street>2715 Main St.</street><city>Santa Monica</city><phone>(310) 399-9939</phone>
+<name>GAUCHO GRILL</name><street>1251 3rd St. Promenade</street><city>Santa Monica</city><phone>(310)394-4966</phone>
+<name>GLADSTONE'S MALIBU</name><street>Sunset at Pacific Coast Hwy.</street><city>Pacific Palisades</city><phone>(310) GL4-FISH</phone>
+<name>GOURMET COFFEE WAREHOUSE</name><street>671 Rose Ave.</street><city>Venice</city><phone>(310) 392-6479</phone>
+<name>ARBUCKLE'S AMERICAN CUISINE</name><street>829 N. La Cienega Blvd.</street><phone>(310) 657-9220</phone>
+<name>BOOK SOUP BISTRO</name><street>8800 Sunset Blvd.</street><city>W. Hollywood</city><phone>(310) 657-1072</phone>
+<name>Outdoor Grill</name><street>12630 1/2  Washington Place</street><city>Culver City</city><phone>(310) 636-4745</phone>
+<name>DAILY GRILL</name><street>100 N. La Cienega Blvd.</street><phone>(310) 659-3100</phone>
+<name>DAILY GRILL</name><city>Brentwood Gardens</city><street>11677 San Vicente Blvd.</street><phone>(310) 442-0044</phone>
+<name>DAILY GRILL</name><city>Encino Place</city><street>16101 Ventura Blvd.</street><phone>(818) 986-4111</phone>
+<name>DAILY GRILL</name><city>Laurel Promenade</city><street>12050 Ventura Blvd.</street><phone>(818) 769-6336</phone>
+<name>DANDELION CAFE</name><street>636 Venice Blvd.</street><city>Venice</city><phone>(310) 821-4890</phone>
+<name>DIVE!</name><street>10250 Santa Monica Blvd.</street><city>Century City</city><phone>(310) 788-DIVE</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>4002 Lincoln Blvd.</street><city>Marina del Rey</city><phone>(310) 822-0095</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>8343 Lincoln Blvd.</street><city>Westchester</city><phone>(310) 670-6677</phone>
+<name>BAJA BUD'S</name><street>1315 Third Street Promenade</street><city>Santa Monica</city><phone>(310) 393-6060</phone>
+<name>JAMAICAN CAFE</name><street>424 Wilshire Blvd.</street><city>Santa Monica</city><phone>(310) 587-2626</phone>
+<name>KILLER SHRIMP</name><street>523 Washington Blvd.</street><city>Marina del Rey</city><phone>(310) 578-2293</phone>
+<name>KILLER SHRIMP</name><street>403 N. Pacific Coast Hwy.</street><city>Redondo Beach</city><phone>(310) 798-0008</phone>
+<name>LA CABANA</name><street>738 Rose Ave.</street><city>Venice</city><phone>(310) 392-6161</phone>
+<name>CHAN DARETTE</name><street>13490 Maxella Ave.</street><city>Marina Del Rey</city><phone>(310) 301-1004</phone>
+<name>CURRY HOUSE</name><street>21215 Hawthorne Blvd.</street><city>Torrance</city><phone>(310) 540-8980</phone>
+<name>DANDELION CAFE</name><street>636 Venice Blvd.</street><city>Venice</city><phone>(310) 821-4890</phone>
+<name>DUKE'S MALIBU</name><street>21150 Pacific Coast Hwy</street><city>Malibu</city><phone>(310) 317-0777</phone>
+<name>EAT PANINI</name><street>2715 Main St.</street><city>Santa Monica</city><phone>(310) 399-9939</phone>
+<name>GAUCHO GRILL</name><street>1251 3rd St. Promenade</street><city>Santa Monica</city><phone>(310)394-4966</phone>
+<name>GLADSTONE'S MALIBU</name><street>Sunset at Pacific Coast Hwy.</street><city>Pacific Palisades</city><phone>(310) GL4-FISH</phone>
+<name>GOURMET COFFEE WAREHOUSE</name><street>671 Rose Ave.</street><city>Venice</city><phone>(310) 392-6479</phone>
+<name>KIPPAN</name><street>260 N. Beverly Dr.</street><city>Beverly Hills</city><phone>(310) 858-0535</phone>
+<name>CURRY HOUSE</name><street>163 N. La Cienega Blvd.</street><city>Beverly Hills</city><phone>(310) 854-4959</phone>
+<name>DELILA</name><street>270 S. La Cienega Blvd.</street><city>Beverly Hills</city><phone>(310) 360-0036</phone>
+<name>DIVE!</name><street>10250 Santa Monica Blvd.</street><city>Century City</city><phone>(310) 788-DIVE</phone>
+<name>GAUCHO GRILL</name><street>11754 San Vicente Blvd.</street><city>Brentwood</city><phone>(310) 447-7898</phone>
+<name>INDIA'S TANDOORI</name><street>142 N. San Fernando Blvd.</street><city>Burbank</city><phone>(818) 846-7500</phone>
+<name>PINOT AT THE CHRONICLE</name><street>897 Granite Drive</street><city>Pasadena</city><phone>(818) 792-1179</phone>
+<name>GAUCHO GRILL</name><street>121 W. Colorado Blvd.</street><city>Pasadena</city><phone>(818) 683-3580</phone>
+<name>BOURBON STREET SHRIMP</name><street>8454 Melrose Ave.</street><city>W. Hollywood</city><phone>(213) 653-2640</phone>
+<name>HOUSE OF BLUES</name><street>8430 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 650-5686</phone>
+<name>KILLER SHRIMP</name><street>523 Washington Blvd.</street><city>Marina del Rey</city><phone>(310) 578-2293</phone>
+<name>KILLER SHRIMP</name><street>403 N. Pacific Coast Hwy.</street><city>Redondo Beach</city><phone>(310) 798-0008</phone>
+<name>KILLER SHRIMP</name><street>4000 Colfax Ave.</street><city>Studio City</city><phone>(818) 508-1570</phone>
+<name>CAJUN BISTRO</name><street>8301 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-6388</phone>
+<name>BAMBOO RESTAURANT</name><street>10835 Venice Blvd.</street><phone>(310) 287-0668</phone>
+<name>JAMAICAN CAFE</name><street>424 Wilshire Blvd.</street><city>Santa Monica</city><phone>(310) 587-2626</phone>
+<name>Cadillac CafE</name><street>359 N. La Cienega Blvd.</street><phone>(310) 657-6591</phone>
+<name>HUNAN TASTE CHINESE CUISINE</name><street>6031 W. San Vicente Blvd.</street><phone>(213) 936-5621</phone>
+<name>Hop Li</name><street>10974 Pico Blvd.</street><city>West L.A.</city><phone>(310) 441-3709</phone>
+<name>CHI DYNASTY</name><street>2112 Hillhurst Ave.</street><city>L.A.</city><phone>(213) 667-3388</phone>
+<name>Ruby Palace</name><street>1330 Fullerton Road</street><city>City of Industry</city><phone>(818) 912-6828</phone>
+<name>GOURMET COFFEE WAREHOUSE</name><street>671 Rose Ave.</street><city>Venice</city><phone>(310) 392-6479</phone>
+<name>EL FLORIDITA RESTAURANT</name><street>1253 N. Vine St.</street><city>L.A.</city><phone>(213) 871-8612</phone>
+<name>EL RINCON CRIOLLO</name><street>4361 Sepulveda Blvd.</street><city>Culver City</city><phone>(310) 391-4478</phone>
+<name>ANGELI CAFFE</name><street>7274 Melrose Ave.</street><city>W. Hollywood</city><phone>(213) 936-9086</phone>
+<name>BAJA BUD'S</name><street>8575 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 659-1911</phone>
+<name>BOOK SOUP BISTRO</name><street>8800 Sunset Blvd.</street><city>W. Hollywood</city><phone>(310) 657-1072</phone>
+<name>BOURBON STREET SHRIMP</name><street>8454 Melrose Ave.</street><city>W. Hollywood</city><phone>(213) 653-2640</phone>
+<name>HOUSE OF BLUES</name><street>8430 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 650-5686</phone>
+<name>HUGO'S</name><street>8401 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(213) 654-4088</phone>
+<name>LA MASIA</name><street>9077 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 273-7066</phone>
+<name>CAJUN BISTRO</name><street>8301 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-6388</phone>
+<name>COBALT CANTINA</name><street>616 N. Robertson Blvd.</street><city>W. Hollywood</city><phone>(310) 659-8691</phone>
+<name>CULTURED CLASS</name><street>8719 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 657-8350</phone>
+<name>GAUCHO GRILL</name><street>7980 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-4152</phone>
+<name>CAFE BRASIL</name><street>10831 Venice Blvd.</street><city>L.A.</city><phone>(310) 837-8957</phone>
+<name>GAUCHO GRILL</name><street>7980 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-4152</phone>
+<name>GAUCHO GRILL</name><street>12050 Ventura Blvd.</street><city>Studio City</city><phone>(818) 508-1030</phone>
+<name>GAUCHO GRILL</name><street>6435 Canoga Ave.</street><city>Woodland Hills</city><phone>(818) 992-6416</phone>
+<name>GAUCHO GRILL</name><street>11754 San Vicente Blvd.</street><city>Brentwood</city><phone>(310) 447-7898</phone>
+<name>GAUCHO GRILL</name><street>1251 3rd St. Promenade</street><city>Santa Monica</city><phone>(310)394-4966</phone>
+<name>GAUCHO GRILL</name><street>121 W. Colorado Blvd.</street><city>Pasadena</city><phone>(818) 683-3580</phone>
+<name>GAUCHO GRILL</name><street>101 La Cienega Blvd.</street><phone>(310) 657-9104</phone>
+<name>Ruby Palace</name><street>1330 Fullerton Road</street><city>City of Industry</city><phone>(818) 912-6828</phone>
+<name>Cadillac CafE</name><street>359 N. La Cienega Blvd.</street><phone>(310) 657-6591</phone>
+<name>CAFE PINOT</name><street>700 W. Fifth St.</street><city>L.A.</city><phone>(213) 239-6500</phone>
+<name>PATINA</name><street>5955 Melrose Ave.</street><city>L.A.</city><phone>(213) 467-1108</phone>
+<name>PATINETTE AT MOCA</name><street>250 S. Grand Ave.</street><city>L.A.</city><phone>(213) 626-1178</phone>
+<name>PINOT BISTRO</name><street>12969 Ventura Blvd.</street><city>Studio City</city><phone>(818) 990-0500</phone>
+<name>LA MADRAGUE</name><street>401 N. La Cienega Blvd.</street><city>L.A.</city><phone>(310) 659-4999</phone>
+<name>PINOT HOLLYWOOD</name><street>1448 N. Gower St.</street><city>Hollywood</city><phone>(213) 461-8800</phone>
+<name>PINOT AT THE CHRONICLE</name><street>897 Granite Drive</street><city>Pasadena</city><phone>(818) 792-1179</phone>
+<name>ATLAS BARandGRILL</name><street>3760 Wilshire Blvd.</street><city>L.A.</city><phone>(213) 380-8400</phone>
+<name>HOLLYWOOD CANTEEN</name><street>1006 N. Seward St.</street><city>L.A.</city><phone>(213) 465-0961</phone>
+<name>HOLLYWOOD FARMERS' MARKET</name><street>Ivar Selma avenues</street><phone>(213) 463-3171</phone>
+<name>K-BIG DELIVERY FOODLINE</name><phone>(800) 774-FOOD (3663)</phone>
+<name>Hudson Grille</name><street>6545 Santa Monica Blvd.</street><phone>(213) 466-0900</phone>
+<name>CATALINA BAR GRILL</name><street>1640 N. Cahuenga Blvd.</street><city>Hollywood</city><phone>(213) 466-2210</phone>
+<name>CURRY HOUSE</name><street>163 N. La Cienega Blvd.</street><city>Beverly Hills</city><phone>(310) 854-4959</phone>
+<name>CURRY HOUSE</name><street>121 S. Onizuka St.</street><city>L.A.</city><phone>(213) 620-0855</phone>
+<name>CURRY HOUSE</name><street>21215 Hawthorne Blvd.</street><city>Torrance</city><phone>(310) 540-8980</phone>
+<name>CURRY HOUSE</name><street>1425 W. Artesia Blvd.</street><city>Gardena</city><phone>(310) 323-7017</phone>
+<name>DRESDEN ROOM</name><street>1760 N. Vermont Ave.</street><city>L.A.</city><phone>(213) 665-4294</phone>
+<name>CULTURED CLASS</name><street>8719 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 657-8350</phone>
+<name>HOLLYWOOD FARMERS' MARKET</name><street>Ivar Selma avenues</street><phone>(213) 463-3171</phone>
+<name>Hudson Grille</name><street>6545 Santa Monica Blvd.</street><phone>(213) 466-0900</phone>
+<name>PINOT HOLLYWOOD</name><street>1448 N. Gower St.</street><city>Hollywood</city><phone>(213) 461-8800</phone>
+<name>CATALINA BAR GRILL</name><street>1640 N. Cahuenga Blvd.</street><city>Hollywood</city><phone>(213) 466-2210</phone>
+<name>CHAN DARAE</name><street>1511 N. Cahuenga Blvd.</street><city>Hollywood</city><phone>(213) 464-8585</phone>
+<name>ANARKALI INDIAN TANDOORI RESTAURANT</name><street>7013 Melrose Ave.</street><city>L.A.</city><phone>(213) 934-6488</phone>
+<name>INDIA'S TANDOORI</name><street>142 N. San Fernando Blvd.</street><city>Burbank</city><phone>(818) 846-7500</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>4002 Lincoln Blvd.</street><city>Marina del Rey</city><phone>(310) 822-0095</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>8343 Lincoln Blvd.</street><city>Westchester</city><phone>(310) 670-6677</phone>
+<name>ANGELI CAFFE</name><street>7274 Melrose Ave.</street><city>W. Hollywood</city><phone>(213) 936-9086</phone>
+<name>HUGO'S</name><street>8401 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(213) 654-4088</phone>
+<name>EAT PANINI</name><street>2715 Main St.</street><city>Santa Monica</city><phone>(310) 399-9939</phone>
+<name>FIX</name><street>6266 1/2   Sunset Blvd.</street><city>L.A.</city><phone>(213) 465-5349</phone>
+<name>HIROZEN</name><street>8385 Beverly Blvd.</street><city>L.A.</city><phone>(213) 653-0470</phone>
+<name>KIPPAN</name><street>260 N. Beverly Dr.</street><city>Beverly Hills</city><phone>(310) 858-0535</phone>
+<name>ANARKALI INDIAN TANDOORI RESTAURANT</name><street>7013 Melrose Ave.</street><city>L.A.</city><phone>(213) 934-6488</phone>
+<name>ARBUCKLE'S AMERICAN CUISINE</name><street>829 N. La Cienega Blvd.</street><city>L.A.</city><phone>(310) 657-9220</phone>
+<name>ATLAS BARandGRILL</name><street>3760 Wilshire Blvd.</street><city>L.A.</city><phone>(213) 380-8400</phone>
+<name>BAMBOO RESTAURANT</name><street>10835 Venice Blvd.</street><city>L.A.</city><phone>(310) 287-0668</phone>
+<name>CAFE BRASIL</name><street>10831 Venice Blvd.</street><city>L.A.</city><phone>(310) 837-8957</phone>
+<name>CAFE PINOT</name><street>700 W. Fifth St.</street><city>L.A.</city><phone>(213) 239-6500</phone>
+<name>PATINA</name><street>5955 Melrose Ave.</street><city>L.A.</city><phone>(213) 467-1108</phone>
+<name>PATINETTE AT MOCA</name><street>250 S. Grand Ave.</street><city>L.A.</city><phone>(213) 626-1178</phone>
+<name>HIROZEN</name><street>8385 Beverly Blvd.</street><city>L.A.</city><phone>(213) 653-0470</phone>
+<name>HOLLYWOOD CANTEEN</name><street>1006 N. Seward St.</street><city>L.A.</city><phone>(213) 465-0961</phone>
+<name>HUNAN TASTE CHINESE CUISINE</name><street>6031 W. San Vicente Blvd.</street><city>L.A.</city><phone>(213) 936-5621</phone>
+<name>K-BIG DELIVERY FOODLINE</name><phone>(800) 774-FOOD (3663)</phone>
+<name>LA MADRAGUE</name><street>401 N. La Cienega Blvd.</street><city>L.A.</city><phone>(310) 659-4999</phone>
+<name>Cadillac CafE</name><street>359 N. La Cienega Blvd.</street><phone>(310) 657-6591</phone>
+<name>CHAN DARA</name><street>310 N. Larchmont Blvd.</street><city>L.A.</city><phone>(213) 467-1052</phone>
+<name>CHI DYNASTY</name><street>2112 Hillhurst Ave.</street><city>L.A.</city><phone>(213) 667-3388</phone>
+<name>COBALT CANTINA</name><street>4326 Sunset Blvd.</street><city>L.A.</city><phone>(213) 953-9991</phone>
+<name>CURRY HOUSE</name><street>121 S. Onizuka St.</street><city>L.A.</city><phone>(213) 620-0855</phone>
+<name>DAILY GRILL</name><street>100 N. La Cienega Blvd.</street><phone>(310) 659-3100</phone>
+<name>DAILY GRILL</name><street>11677 San Vicente Blvd.</street><phone>(310) 442-0044</phone>
+<name>DRESDEN ROOM</name><street>1760 N. Vermont Ave.</street><city>L.A.</city><phone>(213) 665-4294</phone>
+<name>EL FLORIDITA RESTAURANT</name><street>1253 N. Vine St.</street><city>L.A.</city><phone>(213) 871-8612</phone>
+<name>FIX</name><street>6266 1/2   Sunset Blvd.</street><city>L.A.</city><phone>(213) 465-5349</phone>
+<name>GAUCHO GRILL</name><street>101 La Cienega Blvd.</street><phone>(310) 657-9104</phone>
+<name>CAFE BRASIL</name><street>10831 Venice Blvd.</street><city>L.A.</city><phone>(310) 837-8957</phone>
+<name>GAUCHO GRILL</name><street>7980 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-4152</phone>
+<name>GAUCHO GRILL</name><street>12050 Ventura Blvd.</street><city>Studio City</city><phone>(818) 508-1030</phone>
+<name>GAUCHO GRILL</name><street>6435 Canoga Ave.</street><city>Woodland Hills</city><phone>(818) 992-6416</phone>
+<name>GAUCHO GRILL</name><street>11754 San Vicente Blvd.</street><city>Brentwood</city><phone>(310) 447-7898</phone>
+<name>GAUCHO GRILL</name><street>1251 3rd St. Promenade</street><city>Santa Monica</city><phone>(310)394-4966</phone>
+<name>GAUCHO GRILL</name><street>121 W. Colorado Blvd.</street><city>Pasadena</city><phone>(818) 683-3580</phone>
+<name>GAUCHO GRILL</name><street>101 La Cienega Blvd.</street><phone>(310) 657-9104</phone>
+<name>LA MASIA</name><street>9077 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 273-7066</phone>
+<name>DELILA</name><street>270 S. La Cienega Blvd.</street><city>Beverly Hills</city><phone>(310) 360-0036</phone>
+<name>BAJA BUD'S</name><street>1315 Third Street Promenade</street><city>Santa Monica</city><phone>(310) 393-6060</phone>
+<name>BAJA BUD'S</name><street>11819 Wilshire Blvd.</street><city>L.A.</city><phone>(310) 477-2885</phone>
+<name>BAJA BUD'S</name><street>10850 W. Pico Blvd.</street><city>L.A.</city><phone>(310) 475-8844</phone>
+<name>BAJA BUD'S</name><street>8575 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 659-1911</phone>
+<name>BAJA BUD'S</name><street>20044 Ventura Blvd.</street><city>Woodland Hills</city><phone>(818) 716-0100</phone>
+<name>BAJA BUD'S</name><street>21801 Oxnard St.</street><city>Woodland Hills</city><phone>(818) 347-9662</phone>
+<name>LA CABANA</name><street>738 Rose Ave.</street><city>Venice</city><phone>(310) 392-6161</phone>
+<name>COBALT CANTINA</name><street>616 N. Robertson Blvd.</street><city>W. Hollywood</city><phone>(310) 659-8691</phone>
+<name>COBALT CANTINA</name><street>4326 Sunset Blvd.</street><city>L.A.</city><phone>(213) 953-9991</phone>
+<name>DUKE'S MALIBU</name><street>21150 Pacific Coast Hwy</street><city>Malibu</city><phone>(310) 317-0777</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>4002 Lincoln Blvd.</street><city>Marina del Rey</city><phone>(310) 822-0095</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>8343 Lincoln Blvd.</street><city>Westchester</city><phone>(310) 670-6677</phone>
+<name>BAJA BUD'S</name><street>1315 Third Street Promenade</street><city>Santa Monica</city><phone>(310) 393-6060</phone>
+<name>JAMAICAN CAFE</name><street>424 Wilshire Blvd.</street><city>Santa Monica</city><phone>(310) 587-2626</phone>
+<name>KILLER SHRIMP</name><street>523 Washington Blvd.</street><city>Marina del Rey</city><phone>(310) 578-2293</phone>
+<name>KILLER SHRIMP</name><street>403 N. Pacific Coast Hwy.</street><city>Redondo Beach</city><phone>(310) 798-0008</phone>
+<name>LA CABANA</name><street>738 Rose Ave.</street><city>Venice</city><phone>(310) 392-6161</phone>
+<name>CHAN DARETTE</name><street>13490 Maxella Ave.</street><city>Marina Del Rey</city><phone>(310) 301-1004</phone>
+<name>CURRY HOUSE</name><street>21215 Hawthorne Blvd.</street><city>Torrance</city><phone>(310) 540-8980</phone>
+<name>DANDELION CAFE</name><street>636 Venice Blvd.</street><city>Venice</city><phone>(310) 821-4890</phone>
+<name>DUKE'S MALIBU</name><street>21150 Pacific Coast Hwy</street><city>Malibu</city><phone>(310) 317-0777</phone>
+<name>EAT PANINI</name><street>2715 Main St.</street><city>Santa Monica</city><phone>(310) 399-9939</phone>
+<name>GAUCHO GRILL</name><street>1251 3rd St. Promenade</street><city>Santa Monica</city><phone>(310)394-4966</phone>
+<name>GLADSTONE'S MALIBU</name><street>Sunset at Pacific Coast Hwy.</street><city>Pacific Palisades</city><phone>(310) GL4-FISH</phone>
+<name>GOURMET COFFEE WAREHOUSE</name><street>671 Rose Ave.</street><city>Venice</city><phone>(310) 392-6479</phone>
+<name>DELMONICO'S SEAFOOD GRILLE</name><street>9320 W. Pico Blvd.</street><city>L.A.</city><phone>(310) 550-7737</phone>
+<name>DELMONICO'S SEAFOOD GRILLE</name><street>16358 Ventura Blvd.</street><city>Encino</city><phone>(818) 986-0777</phone>
+<name>GLADSTONE'S MALIBU</name><street>Sunset at Pacific Coast Hwy.</street><city>Pacific Palisades</city><phone>(310) GL4-FISH</phone>
+<name>BAMBOO RESTAURANT</name><street>10835 Venice Blvd.</street><city>L.A.</city><phone>(310) 287-0668</phone>
+<name>JAMAICAN CAFE</name><street>424 Wilshire Blvd.</street><city>Santa Monica</city><phone>(310) 587-2626</phone>
+<name>CHAN DARA</name><street>310 N. Larchmont Blvd.</street><city>L.A.</city><phone>(213) 467-1052</phone>
+<name>CHAN DARAE</name><street>1511 N. Cahuenga Blvd.</street><city>Hollywood</city><phone>(213) 464-8585</phone>
+<name>CHAN DARETTE</name><street>13490 Maxella Ave.</street><city>Marina Del Rey</city><phone>(310) 301-1004</phone>
+<name>BAJA BUD'S</name><street>20044 Ventura Blvd.</street><city>Woodland Hills</city><phone>(818) 716-0100</phone>
+<name>BAJA BUD'S</name><street>21801 Oxnard St.</street><city>Woodland Hills</city><phone>(818) 347-9662</phone>
+<name>PINOT BISTRO</name><street>12969 Ventura Blvd.</street><city>Studio City</city><phone>(818) 990-0500</phone>
+<name>KILLER SHRIMP</name><street>4000 Colfax Ave.</street><city>Studio City</city><phone>(818) 508-1570</phone>
+<name>DAILY GRILL</name><street>16101 Ventura Blvd.</street><city>Encino</city><phone>(818) 986-4111</phone>
+<name>DAILY GRILL</name><street>12050 Ventura Blvd.</street><city>Studio City</city><phone>(818) 769-6336</phone>
+<name>DELMONICO'S SEAFOOD GRILLE</name><street>16358 Ventura Blvd.</street><city>Encino</city><phone>(818) 986-0777</phone>
+<name>GAUCHO GRILL</name><street>12050 Ventura Blvd.</street><city>Studio City</city><phone>(818) 508-1030</phone>
+<name>GAUCHO GRILL</name><street>6435 Canoga Ave.</street><city>Woodland Hills</city><phone>(818) 992-6416</phone>
+<name>BAJA BUD'S</name><street>1315 Third Street Promenade</street><city>Santa Monica</city><phone>(310) 393-6060</phone>
+<name>BAJA BUD'S</name><street>11819 Wilshire Blvd.</street><city>L.A.</city><phone>(310) 477-2885</phone>
+<name>BAJA BUD'S</name><street>10850 W. Pico Blvd.</street><city>L.A.</city><phone>(310) 475-8844</phone>
+<name>BAJA BUD'S</name><street>8575 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 659-1911</phone>
+<name>BAJA BUD'S</name><street>20044 Ventura Blvd.</street><city>Woodland Hills</city><phone>(818) 716-0100</phone>
+<name>BAJA BUD'S</name><street>21801 Oxnard St.</street><city>Woodland Hills</city><phone>(818) 347-9662</phone>
+<name>LA CABANA</name><street>738 Rose Ave.</street><city>Venice</city><phone>(310) 392-6161</phone>
+<name>COBALT CANTINA</name><street>616 N. Robertson Blvd.</street><city>W. Hollywood</city><phone>(310) 659-8691</phone>
+<name>COBALT CANTINA</name><street>4326 Sunset Blvd.</street><city>L.A.</city><phone>(213) 953-9991</phone>
+<name>ANGELI CAFFE</name><street>7274 Melrose Ave.</street><city>W. Hollywood</city><phone>(213) 936-9086</phone>
+<name>BAJA BUD'S</name><street>8575 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 659-1911</phone>
+<name>BOOK SOUP BISTRO</name><street>8800 Sunset Blvd.</street><city>W. Hollywood</city><phone>(310) 657-1072</phone>
+<name>BOURBON STREET SHRIMP</name><street>8454 Melrose Ave.</street><city>W. Hollywood</city><phone>(213) 653-2640</phone>
+<name>HOUSE OF BLUES</name><street>8430 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 650-5686</phone>
+<name>HUGO'S</name><street>8401 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(213) 654-4088</phone>
+<name>LA MASIA</name><street>9077 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 273-7066</phone>
+<name>CAJUN BISTRO</name><street>8301 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-6388</phone>
+<name>COBALT CANTINA</name><street>616 N. Robertson Blvd.</street><city>W. Hollywood</city><phone>(310) 659-8691</phone>
+<name>CULTURED CLASS</name><street>8719 Santa Monica Blvd.</street><city>W. Hollywood</city><phone>(310) 657-8350</phone>
+<name>GAUCHO GRILL</name><street>7980 Sunset Blvd.</street><city>W. Hollywood</city><phone>(213) 656-4152</phone>
+<name>BAJA BUD'S</name><street>11819 Wilshire Blvd.</street><city>L.A.</city><phone>(310) 477-2885</phone>
+<name>BAJA BUD'S</name><street>10850 W. Pico Blvd.</street><city>L.A.</city><phone>(310) 475-8844</phone>
+<name>Hop Li</name><street>10974 Pico Blvd.</street><city>West L.A.</city><phone>(310) 441-3709</phone>
+<name>Outdoor Grill</name><street>12630 1/2  Washington Place</street><city>Culver City</city><phone>(310) 636-4745</phone>
+<name>DELMONICO'S SEAFOOD GRILLE</name><street>9320 W. Pico Blvd.</street><city>L.A.</city><phone>(310) 550-7737</phone>
+<name>EL RINCON CRIOLLO</name><street>4361 Sepulveda Blvd.</street><city>Culver City</city><phone>(310) 391-4478</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>4002 Lincoln Blvd.</street><city>Marina del Rey</city><phone>(310) 822-0095</phone>
+<name>ALEJO'S PRESTO TRATTORIA</name><street>8343 Lincoln Blvd.</street><city>Westchester</city><phone>(310) 670-6677</phone>
+<name>BAJA BUD'S</name><street>1315 Third Street Promenade</street><city>Santa Monica</city><phone>(310) 393-6060</phone>
+<name>JAMAICAN CAFE</name><street>424 Wilshire Blvd.</street><city>Santa Monica</city><phone>(310) 587-2626</phone>
+<name>KILLER SHRIMP</name><street>523 Washington Blvd.</street><city>Marina del Rey</city><phone>(310) 578-2293</phone>
+<name>KILLER SHRIMP</name><street>403 N. Pacific Coast Hwy.</street><city>Redondo Beach</city><phone>(310) 798-0008</phone>
+<name>LA CABANA</name><street>738 Rose Ave.</street><city>Venice</city><phone>(310) 392-6161</phone>
+<name>CHAN DARETTE</name><street>13490 Maxella Ave.</street><city>Marina Del Rey</city><phone>(310) 301-1004</phone>
+<name>CURRY HOUSE</name><street>21215 Hawthorne Blvd.</street><city>Torrance</city><phone>(310) 540-8980</phone>
+<name>DANDELION CAFE</name><street>636 Venice Blvd.</street><city>Venice</city><phone>(310) 821-4890</phone>
+<name>DUKE'S MALIBU</name><street>21150 Pacific Coast Hwy</street><city>Malibu</city><phone>(310) 317-0777</phone>
+<name>EAT PANINI</name><street>2715 Main St.</street><city>Santa Monica</city><phone>(310) 399-9939</phone>
+<name>GAUCHO GRILL</name><street>1251 3rd St. Promenade</street><city>Santa Monica</city><phone>(310)394-4966</phone>
+<name>GLADSTONE'S MALIBU</name><street>Sunset at Pacific Coast Hwy.</street><city>Pacific Palisades</city><phone>(310) GL4-FISH</phone>
+<name>GOURMET COFFEE WAREHOUSE</name><street>671 Rose Ave.</street><city>Venice</city><phone>(310) 392-6479</phone>
+<name>DUKE'S MALIBU</name><street>21150 Pacific Coast Hwy</street><city>Malibu</city><phone>(310) 317-0777</phone>
+<name>CHAN DARA</name><street>310 N. Larchmont Blvd.</street><city>L.A.</city><phone>(213) 467-1052</phone>
+<name>CHAN DARAE</name><street>1511 N. Cahuenga Blvd.</street><city>Hollywood</city><phone>(213) 464-8585</phone>
+<name>CHAN DARETTE</name><street>13490 Maxella Ave.</street><city>Marina Del Rey</city><phone>(310) 301-1004</phone>
