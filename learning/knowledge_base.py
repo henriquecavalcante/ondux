@@ -9,6 +9,7 @@ from pprint import pprint
 from utils import functions as F
 from utils import log_settings
 
+from .attribute import Attribute
 from .inverted_index import InvertedIndex
 from .occurrence import Occurrence
 
@@ -19,29 +20,30 @@ class KnowledgeBase:
 
     Attributes:
         k_base: A dict representing the attributes and their list of terms
-        inverted_k_base: A dict representing the all terms of the Knowledge
-        Base and the attributes they are present
+        inverted_k_base: A dict representing the all terms of the Knowledge Base and
+        the attributes they are present
+        attribute_statistics: A dict representing each attribute statistics
     """
 
     def __init__(self, kb_file):
         """Return a Knowledge Base object"""
         self.k_base = {}
+        self.inverted_k_base = {}
+        self.attribute_statistics = {}
         self.init_kb(kb_file)
-        self.inverted_k_base = InvertedIndex(self.k_base).inverted_k_base
+        self.init_inverted_k_base()
+        self.init_atribute_statistics()
 
     def init_kb(self, kb_file):
-        '''Parse Knowledge Base and prepare it to extract
-        the content-based features'''
-        logger.debug('parsing knowlede base file')
+        '''Parse Knowledge Base and prepare it to extract the content-based features'''
+        logger.info('Parsing knowledge base file...')
         tree = ET.parse(kb_file)
         root = tree.getroot()
         for item in root:
-            attribute = F.normalize_str(item.tag)
+            attribute = item.tag
             value = F.remove_stop_words(F.normalize_str(item.text))
-
             for term in value:
                 occurrence = Occurrence(term)
-
                 if attribute in self.k_base:
                     if term not in [obj.term for obj in self.k_base[attribute]]:
                         self.k_base[attribute].append(occurrence)
@@ -51,9 +53,26 @@ class KnowledgeBase:
                 else:
                     self.k_base[attribute] = [occurrence]
 
+    def init_inverted_k_base(self):
+        '''Create an inverted index for the Knowledge Base'''
+        self.inverted_k_base = InvertedIndex(self.k_base).inverted_k_base
+
     def get_attributes(self):
         '''Get a list with all attributes in the Knowledge Base'''
         return [v for v in self.k_base.keys()]
+
+    def init_atribute_statistics(self):
+        '''Set a list of attribute statistics'''
+        for attr in self.get_attributes():
+            most_commom = self.get_most_common_term_by_attribute(attr)
+            avg = 0.0
+            stdev = 0.0001
+            numeric_values = [int(v.term) for v in self.k_base[attr] if re.match(r'^\d+$', v.term)]
+            if len(numeric_values):
+                avg = statistics.mean(numeric_values)
+            if len(numeric_values) > 1:
+                stdev = statistics.stdev(numeric_values)
+            self.attribute_statistics[attr] = Attribute(attr, avg, stdev, most_commom)
 
     def get_most_common_term_by_attribute(self, attr):
         '''Get the highest frequency of any term among the values of A'''
@@ -62,30 +81,14 @@ class KnowledgeBase:
 
     def get_term_frequency_by_attribute(self, term, attr):
         '''Get the number of distinct values of attribute A that contain the term t'''
-        terms = [v for v in self.k_base[attr] if v.term == term]
-        if terms:
-            return terms[0].number
+        if term in self.inverted_k_base:
+            frequency = [v[1] for v in self.inverted_k_base[term] if v[0] == attr]
+            if len(frequency):
+                return frequency[0]
         return 0
 
     def get_term_occurrence_number(self, term):
         '''Get the total number of occurrences of the term t in all attributes'''
-        occ = 0
         if term in self.inverted_k_base:
-            for freq in self.inverted_k_base[term]:
-                occ += freq[1]
-            return occ
-        return 0
-
-    def get_values_average(self, attribute):
-        '''Get the average of numeric values of an attribute A'''
-        numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
-        if len(numeric_values) > 0:
-            return statistics.mean(numeric_values)
-        return 0
-
-    def get_values_standard_deviation(self, attribute):
-        '''Get the standard deviation of numeric values of an attribute A'''
-        numeric_values = [int(v.term) for v in self.k_base[attribute] if re.match(r'^\d+$', v.term)]
-        if len(numeric_values) > 1:
-            return statistics.stdev(numeric_values)
+            return sum(v[1] for v in self.inverted_k_base[term])
         return 0

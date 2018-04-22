@@ -9,18 +9,19 @@ from utils import log_settings
 
 
 def match_blocks(blocks_list, k_base):
-    '''Associate each block generated in the
-    Blocking step with an attribute represented
-    in the knowledge base'''
+    '''Associate each block generated in the Blocking step
+    with an attribute represented in the knowledge base'''
     matched_blocks = []
     for blocks in blocks_list:
-        labeled_block = []
+        labeled_blocks = []
         for block in blocks:
-            labeled_block.append((block, classify_block(block, k_base)))
-        matched_blocks.append(labeled_block)
+            labeled_blocks.append((block, classify_block(block, k_base)))
+        matched_blocks.append(labeled_blocks)
     return matched_blocks
 
 def classify_block(block, k_base):
+    '''Classify a block based on content-based features
+    extracted from Knowledge Base'''
     max_score = 0
     label = "none"
     attr_list = k_base.get_attributes()

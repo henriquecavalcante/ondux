@@ -21,7 +21,7 @@ def run_blocking(input_file, k_base):
 def run_matching(blocks_list, k_base):
     '''Associate blocks to labels using content-based
     features learned from KB'''
-    pprint(match_blocks(blocks_list, k_base))
+    return match_blocks(blocks_list, k_base)
 
 def run_reinforcement():
     '''Reinforce Matching outcome taking into consideration
@@ -32,12 +32,17 @@ def main(knowledge_base=None, input_file=None):
     '''Run ONDUX extraction steps'''
     logger.info('Creating knowledge base...')
     k_base = create_k_base(knowledge_base)
+    logger.info('Knowledge base created!')
 
     logger.info('Running blocking step over input file...')
     blocks_list = run_blocking(input_file, k_base)
+    logger.info('Blocking step done!')
 
     logger.info('Running matching step over list of blocks...')
-    run_matching(blocks_list, k_base)
+    matching_list = run_matching(blocks_list, k_base)
+    logger.info('Matching step done!')
+
+    pprint(matching_list)
 
 if __name__ == "__main__":
     main(sys.argv[1], sys.argv[2])

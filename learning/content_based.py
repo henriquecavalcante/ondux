@@ -2,7 +2,6 @@ import math
 import os
 import re
 import sys
-from collections import Counter
 from pprint import pprint
 
 from utils import functions as F
@@ -15,9 +14,9 @@ def attribute_frequency(canditate_value, attribute, k_base):
     candidate value s and the values of an attribute A
     represented in the knowledge base.'''
     terms = canditate_value.split()
-    sum_fitness = 0
+    sum_fitness = 0.0
     for term in terms:
-        sum_fitness += fitness(F.normalize_str(term), attribute, k_base)
+        sum_fitness += fitness(term, attribute, k_base)
     return sum_fitness/len(terms)
 
 def fitness(term, attribute, k_base):
@@ -31,10 +30,10 @@ def fitness(term, attribute, k_base):
     '''
     f_ta = k_base.get_term_frequency_by_attribute(term, attribute)
     if f_ta > 0:
-        f_max = k_base.get_most_common_term_by_attribute(attribute)
+        f_max = k_base.attribute_statistics[attribute].most_common_term_frequency
         n_t = k_base.get_term_occurrence_number(term)
         return (f_ta/n_t)*(f_ta/f_max)
-    return 0
+    return 0.0
 
 def numeric_matching(canditate_value, attribute, k_base):
     ''' Calculate the similarity between a numeric value present in a
@@ -44,8 +43,6 @@ def numeric_matching(canditate_value, attribute, k_base):
         attr_avg: average of the values of an attribute A
         attr_stdev: standard deviation of the values of an attribute A
     '''
-    attr_avg = round(k_base.get_values_average(attribute))
-    attr_stdev = round(k_base.get_values_standard_deviation(attribute))
-    if attr_avg > 0 and attr_stdev > 0:
-        return math.exp(-(math.pow((int(canditate_value) - attr_avg), 2.0)/(2 * math.pow(attr_stdev, 2.0))))
-    return 0
+    attr_avg = k_base.attribute_statistics[attribute].average
+    attr_stdev = k_base.attribute_statistics[attribute].standard_deviation
+    return math.exp(-(math.pow((int(canditate_value) - attr_avg), 2.0)/(2 * math.pow(attr_stdev, 2.0))))
