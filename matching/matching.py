@@ -1,8 +1,7 @@
 import logging
-import sys
 from pprint import pprint
 
-from learning.content_based import attribute_frequency, numeric_matching
+from learning.content_based import ContentBasedFeatures as CBF
 from learning.knowledge_base import KnowledgeBase
 from utils import functions as F
 
@@ -27,9 +26,9 @@ def classify_block(block, k_base):
     attr_list = k_base.get_attributes()
     for attr in attr_list:
         if block.isdigit():
-            score = numeric_matching(block, attr, k_base)
+            score = CBF.numeric_matching(block, attr, k_base)
         else:
-            score = attribute_frequency(block, attr, k_base)
+            score = CBF.attribute_frequency(block, attr, k_base)
         if score > max_score:
             max_score = score
             label = attr
