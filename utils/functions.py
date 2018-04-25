@@ -59,4 +59,4 @@ def get_stop_words():
 
 def remove_stop_words(text):
     '''Remove the stop words of a string and return the list of tokens'''
-    return [x for x in text.split() if x not in get_stop_words()]
+    return ' '.join([word for word in text.split() if word not in get_stop_words()])

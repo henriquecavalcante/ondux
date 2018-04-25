@@ -8,7 +8,8 @@ from utils import log_settings
 
 def extract_blocks(input_file, k_base):
     '''Extract block structure for each value in input file'''
-    normalized_input = [F.normalize_str(v) for v in F.read_input(input_file)]
+    normalized_input = [F.remove_stop_words(F.normalize_str(v))
+                        for v in F.read_input(input_file)]
     blocks = []
     for value in normalized_input:
         temp = [v.strip() for v in build_blocks(value.split(), k_base) if v not in '']

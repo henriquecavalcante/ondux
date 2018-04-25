@@ -40,7 +40,7 @@ class KnowledgeBase:
         for item in data:
             attribute = item.tag
             value = F.remove_stop_words(F.normalize_str(item.text))
-            for term in value:
+            for term in value.split():
                 occurrence = Occurrence(term)
                 if attribute in self.k_base:
                     if term not in [obj.term for obj in self.k_base[attribute]]:
