@@ -1,17 +1,15 @@
 import logging
 import re
 import statistics
-import sys
 from pprint import pprint
 
 from utils import functions as F
-from utils import log_settings
 
 from .attribute import Attribute
 from .inverted_index import InvertedIndex
 from .occurrence import Occurrence
 
-logger = log_settings.initialize_logs(__name__)
+logger = logging.getLogger(__name__)
 
 class KnowledgeBase:
     """A KnowledgeBase has the following properties:
@@ -64,7 +62,7 @@ class KnowledgeBase:
         for attr in self.get_attributes():
             most_commom = self.get_most_common_term_by_attribute(attr)
             avg = 0.0
-            stdev = 0.0001
+            stdev = 0.0
             numeric_values = [int(v.term) for v in self.k_base[attr] if re.match(r'^\d+$', v.term)]
             if len(numeric_values):
                 avg = statistics.mean(numeric_values)

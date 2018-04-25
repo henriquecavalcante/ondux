@@ -1,5 +1,4 @@
 import logging
-import os
 import sys
 from pprint import pprint
 
@@ -8,7 +7,7 @@ from learning.knowledge_base import KnowledgeBase
 from matching.matching import match_blocks
 from utils import log_settings
 
-logger = log_settings.initialize_logs(__name__)
+logger = log_settings.initialize_logs()
 
 def create_k_base(kb):
     '''Create knowledge base from the input file'''

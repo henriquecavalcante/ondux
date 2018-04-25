@@ -5,8 +5,8 @@ from pprint import pprint
 from learning.content_based import attribute_frequency, numeric_matching
 from learning.knowledge_base import KnowledgeBase
 from utils import functions as F
-from utils import log_settings
 
+logger = logging.getLogger(__name__)
 
 def match_blocks(blocks_list, k_base):
     '''Associate each block generated in the Blocking step

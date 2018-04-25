@@ -1,10 +1,9 @@
 import logging
-import sys
 from pprint import pprint
 
 from utils import functions as F
-from utils import log_settings
 
+logger = logging.getLogger(__name__)
 
 def extract_blocks(input_file, k_base):
     '''Extract block structure for each value in input file'''

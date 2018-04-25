@@ -6,9 +6,7 @@ import sys
 import unicodedata
 import xml.etree.ElementTree as ET
 
-from utils import log_settings
-
-logger = log_settings.initialize_logs(__name__)
+logger = logging.getLogger(__name__)
 
 def read_input(input_file):
     '''Read input file containing data to be extracted'''

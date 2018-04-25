@@ -1,9 +1,9 @@
 import logging
 
 
-def initialize_logs(name):
+def initialize_logs():
     '''Initialize global log handler'''
-    logger = logging.getLogger(name)
+    logger = logging.getLogger()
     handler = logging.StreamHandler()
     formatter = logging.Formatter('%(asctime)s - [%(levelname)s] - %(message)s')
     handler.setFormatter(formatter)
