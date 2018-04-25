@@ -2,8 +2,6 @@ import logging
 import re
 import statistics
 import sys
-import xml.etree.ElementTree as ET
-from collections import Counter
 from pprint import pprint
 
 from utils import functions as F
@@ -19,10 +17,10 @@ class KnowledgeBase:
     """A KnowledgeBase has the following properties:
 
     Attributes:
-        k_base: A dict representing the attributes and their list of terms
+        k_base: A dict representing the attributes and their list of terms.
         inverted_k_base: A dict representing the all terms of the Knowledge Base and
-        the attributes they are present
-        attribute_statistics: A dict representing each attribute statistics
+        the attributes they are present.
+        attribute_statistics: A dict representing each attribute statistics.
     """
 
     def __init__(self, kb_file):
@@ -37,9 +35,9 @@ class KnowledgeBase:
     def init_kb(self, kb_file):
         '''Parse Knowledge Base and prepare it to extract the content-based features'''
         logger.info('Parsing knowledge base file...')
-        tree = ET.parse(kb_file)
-        root = tree.getroot()
-        for item in root:
+        data = F.read_k_base(kb_file)
+
+        for item in data:
             attribute = item.tag
             value = F.remove_stop_words(F.normalize_str(item.text))
             for term in value:
@@ -49,7 +47,7 @@ class KnowledgeBase:
                         self.k_base[attribute].append(occurrence)
                     else:
                         occ = [v for v in self.k_base[attribute] if v.term == term]
-                        occ[0].number += 1
+                        occ[0].frequency += 1
                 else:
                     self.k_base[attribute] = [occurrence]
 
@@ -77,7 +75,7 @@ class KnowledgeBase:
     def get_most_common_term_by_attribute(self, attr):
         '''Get the highest frequency of any term among the values of A'''
         terms = [v for v in self.k_base[attr]]
-        return max(x.number for x in terms if x.term)
+        return max(x.frequency for x in terms if x.term)
 
     def get_term_frequency_by_attribute(self, term, attr):
         '''Get the number of distinct values of attribute A that contain the term t'''

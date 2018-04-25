@@ -6,11 +6,29 @@ import sys
 import unicodedata
 import xml.etree.ElementTree as ET
 
+from utils import log_settings
+
+logger = log_settings.initialize_logs(__name__)
 
 def read_input(input_file):
     '''Read input file containing data to be extracted'''
-    with open(input_file, 'r') as f:
-        return f.read().splitlines()
+    try:
+        with open(input_file, 'r') as f:
+            return f.read().splitlines()
+    except IOError as error:
+        logger.error('It was not possible to read input file. Cause: ' + error.strerror)
+        logger.info('Ondux stopped running!')
+        sys.exit(1)
+
+def read_k_base(kb_file):
+    '''Parse Knowledge Base XML file'''
+    try:
+        tree = ET.parse(kb_file)
+        return tree.getroot()
+    except ET.ParseError as error:
+        logger.error('It was not possible to parse knowledge base file. Cause: ' + error.msg)
+        logger.info('Ondux stopped running!')
+        sys.exit(1)
 
 def normalize_str(input_str):
     '''Transform string to lowercase, remove special chars,
@@ -28,11 +46,16 @@ def get_hash(text):
 
 def get_stop_words():
     '''Get a list with Portuguese and English stop words'''
-    with open('./res/en_stop_words.txt', 'r') as f:
-        stop_words = f.read().splitlines()
-    with open('./res/pt_stop_words.txt', 'r') as f:
-        stop_words += f.read().splitlines()
-    return stop_words
+    try:
+        with open('./res/en_stop_words.txt', 'r') as f:
+            stop_words = f.read().splitlines()
+        with open('./res/pt_stop_words.txt', 'r') as f:
+            stop_words += f.read().splitlines()
+        return stop_words
+    except IOError as error:
+        logger.error('It was not possible to read stop words file. Cause: ' + error.strerror)
+        logger.info('Ondux stopped running!')
+        sys.exit(1)
 
 def remove_stop_words(text):
     '''Remove the stop words of a string and return the list of tokens'''

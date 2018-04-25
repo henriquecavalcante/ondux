@@ -45,4 +45,8 @@ def main(knowledge_base=None, input_file=None):
     pprint(matching_list)
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    try:
+        main(sys.argv[1], sys.argv[2])
+    except IndexError as e:
+        logger.error('Missing arguments. When running ondux you must '
+        'pass as parameter the knowledge base and the input file.')

@@ -9,4 +9,4 @@ class Occurrence:
 
     def __init__(self, term):
         self.term = term
-        self.number = 1
+        self.frequency = 1

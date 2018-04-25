@@ -5,19 +5,24 @@ import sys
 from pprint import pprint
 
 from utils import functions as F
+from utils import log_settings
 
 from .knowledge_base import KnowledgeBase
 
+logger = log_settings.initialize_logs(__name__)
 
 def attribute_frequency(canditate_value, attribute, k_base):
     '''Estimate the similarity between the content of a
     candidate value s and the values of an attribute A
     represented in the knowledge base.'''
     terms = canditate_value.split()
-    sum_fitness = 0.0
+    sum_fitness = 0
     for term in terms:
         sum_fitness += fitness(term, attribute, k_base)
-    return sum_fitness/len(terms)
+    try:
+        return sum_fitness/len(terms)
+    except ZeroDivisionError:
+        return 0
 
 def fitness(term, attribute, k_base):
     '''Evaluate how typical a term t is among the values
@@ -29,11 +34,12 @@ def fitness(term, attribute, k_base):
         n_t: total number of occurrences of the term t in all attributes
     '''
     f_ta = k_base.get_term_frequency_by_attribute(term, attribute)
-    if f_ta > 0:
-        f_max = k_base.attribute_statistics[attribute].most_common_term_frequency
-        n_t = k_base.get_term_occurrence_number(term)
+    f_max = k_base.attribute_statistics[attribute].most_common_term_frequency
+    n_t = k_base.get_term_occurrence_number(term)
+    try:
         return (f_ta/n_t)*(f_ta/f_max)
-    return 0.0
+    except ZeroDivisionError:
+        return 0
 
 def numeric_matching(canditate_value, attribute, k_base):
     ''' Calculate the similarity between a numeric value present in a
