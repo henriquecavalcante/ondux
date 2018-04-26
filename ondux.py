@@ -5,6 +5,7 @@ from pprint import pprint
 from blocking.blocking import extract_blocks
 from learning.knowledge_base import KnowledgeBase
 from matching.matching import match_blocks
+from reinforcement.psm import PSM
 from utils import log_settings
 
 logger = log_settings.initialize_logs()
@@ -22,10 +23,10 @@ def run_matching(blocks_list, k_base):
     features learned from KB'''
     return match_blocks(blocks_list, k_base)
 
-def run_reinforcement():
+def run_reinforcement(matching_list, k_base):
     '''Reinforce Matching outcome taking into consideration
     structure-based features'''
-    pass
+    psm = PSM(matching_list, k_base)
 
 def main(knowledge_base=None, input_file=None):
     '''Run ONDUX extraction steps'''
@@ -41,7 +42,9 @@ def main(knowledge_base=None, input_file=None):
     matching_list = run_matching(blocks_list, k_base)
     logger.info('Matching step done!')
 
-    pprint(matching_list)
+    logger.info('Running reinforcement step over matching list...')
+    run_reinforcement(matching_list, k_base)
+    # logger.info('Reinforcement step done!')
 
 if __name__ == "__main__":
     try:

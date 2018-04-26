@@ -58,3 +58,11 @@ def get_stop_words():
 def remove_stop_words(text):
     '''Remove the stop words of a string and return the list of tokens'''
     return ' '.join([word for word in text.split() if word not in get_stop_words()])
+
+def print_matrix(matrix):
+    '''Print matrix formatted'''
+    s = [[str(e) for e in row] for row in matrix]
+    lens = [max(map(len, col)) for col in zip(*s)]
+    fmt = '\t\t'.join('{{:{}}}'.format(x) for x in lens)
+    table = [fmt.format(*row) for row in s]
+    print('\n'.join(table))

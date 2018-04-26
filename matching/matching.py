@@ -1,9 +1,10 @@
 import logging
 from pprint import pprint
 
-from learning.content_based import ContentBasedFeatures as CBF
 from learning.knowledge_base import KnowledgeBase
 from utils import functions as F
+
+from .content_based import ContentBasedFeatures as CBF
 
 logger = logging.getLogger(__name__)
 
