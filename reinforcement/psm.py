@@ -19,13 +19,13 @@ class PSM:
         in a candidate record.
     '''
 
-    def __init__(self, matched_blocks, k_base):
-        self.t_matrix = self.init_t_matrix(k_base.get_attributes(), matched_blocks)
-        self.p_matrix = self.init_p_matrix(k_base.get_attributes(), matched_blocks)
+    def __init__(self, matching_list, k_base):
+        self.t_matrix = self.init_t_matrix(k_base.get_attributes(), matching_list)
+        self.p_matrix = self.init_p_matrix(k_base.get_attributes(), matching_list)
         F.print_matrix(self.t_matrix)
         F.print_matrix(self.p_matrix)
 
-    def init_t_matrix(self, attribute_list, matched_blocks):
+    def init_t_matrix(self, attribute_list, matching_list):
         '''Initialize transitions matrix'''
         attribute_index = {}
         for i, attr in enumerate(attribute_list):
@@ -39,10 +39,10 @@ class PSM:
             t_matrix[i+1][0] = attribute_list[i]
 
         # Set the number of transitions from label i to label j
-        for block in matched_blocks:
+        for block in matching_list:
             for n in range(len(block)-1):
-                current_label = block[n][1]
-                next_label = block[n+1][1]
+                current_label = block[n].label
+                next_label = block[n+1].label
                 if current_label == 'none' or next_label == 'none':
                     continue
 
@@ -61,14 +61,14 @@ class PSM:
 
         return t_matrix
 
-    def init_p_matrix(self, attribute_list, matched_blocks):
+    def init_p_matrix(self, attribute_list, matching_list):
         '''Initialize positioning matrix'''
         attribute_index = {}
         for i, attr in enumerate(attribute_list):
             attribute_index[attr] = i + 1
 
         rows = len(attribute_list)+1
-        cols = max([len(v) for v in matched_blocks])+1
+        cols = max([len(v) for v in matching_list])+1
         p_matrix = [[0 for i in range(cols)] for j in range(rows)]
         position_index = [{i+1:0} for i in range(cols-1)]
 
@@ -77,9 +77,9 @@ class PSM:
         for i in range(cols-1):
             p_matrix[0][i+1] = (i+1)
 
-        for block in matched_blocks:
+        for block in matching_list:
             for n in range(len(block)):
-                current_label = block[n][1]
+                current_label = block[n].label
                 if current_label == 'none':
                     continue
 

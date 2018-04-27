@@ -1,6 +1,7 @@
 import logging
 from pprint import pprint
 
+from blocking.block import Block
 from utils import functions as F
 
 logger = logging.getLogger(__name__)
@@ -10,23 +11,26 @@ def extract_blocks(input_file, k_base):
     normalized_input = [F.remove_stop_words(F.normalize_str(v))
                         for v in F.read_input(input_file)]
     blocks = []
-    for value in normalized_input:
-        temp = [v.strip() for v in build_blocks(value.split(), k_base) if v not in '']
-        blocks.append(temp)
+    for record in normalized_input:
+        blocks.append(build_blocks(record.split(), k_base) )
     return blocks
 
 def build_blocks(terms, k_base):
     '''Build a set of blocks for a string'''
-    blocks = ['']*len(terms)
-    blocks[0] = terms[0]
+    blocks_list = []
+    blocks_list.append(Block(terms[0]))
     i = 0
     j = 1
     while j < len(terms):
         if not co_occurs(terms[j], terms[j-1], k_base):
+            blocks_list.append(Block(''))
             i += 1
-        blocks[i] += ' ' + terms[j]
+        if blocks_list[i].value in '':
+            blocks_list[i].value += terms[j]
+        else:
+            blocks_list[i].value += ' ' + terms[j]
         j += 1
-    return blocks
+    return blocks_list
 
 def co_occurs(current_term, previous_term, k_base):
     '''Verify if the current term and next term are known

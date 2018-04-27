@@ -35,11 +35,11 @@ def main(knowledge_base=None, input_file=None):
     logger.info('Knowledge base created!')
 
     logger.info('Running blocking step over input file...')
-    blocks_list = run_blocking(input_file, k_base)
+    blocking_list = run_blocking(input_file, k_base)
     logger.info('Blocking step done!')
 
     logger.info('Running matching step over list of blocks...')
-    matching_list = run_matching(blocks_list, k_base)
+    matching_list = run_matching(blocking_list, k_base)
     logger.info('Matching step done!')
 
     logger.info('Running reinforcement step over matching list...')
@@ -48,7 +48,10 @@ def main(knowledge_base=None, input_file=None):
 
 if __name__ == "__main__":
     try:
-        main(sys.argv[1], sys.argv[2])
+        knowledge_base = sys.argv[1]
+        input_file = sys.argv[2]
     except IndexError as e:
         logger.error('Missing arguments. When running ondux you must '
         'pass as parameter the knowledge base and the input file.')
+    finally:
+        main(knowledge_base, input_file)
