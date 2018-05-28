@@ -66,3 +66,17 @@ def print_matrix(matrix):
     fmt = '\t\t'.join('{{:{}}}'.format(x) for x in lens)
     table = [fmt.format(*row) for row in s]
     print('\n'.join(table))
+
+def save_results(results):
+    '''Create XML file to save the results after running ONDUX'''
+    try:
+        with open('results.xml', 'w') as f:
+            for result in results:
+                line = ''
+                for block in result:
+                    line += '<{0}>{1}</{0}>'.format(block.label, block.value)
+                f.write(line + '\n')
+    except IOError as error:
+        logger.error('It was not possible to create results file. Cause: ' + error.strerror)
+        logger.info('Ondux stopped running!')
+        sys.exit(1)

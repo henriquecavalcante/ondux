@@ -7,7 +7,7 @@ from learning.knowledge_base import KnowledgeBase
 from matching.matching import match_blocks
 from reinforcement.psm import PSM
 from reinforcement.reinforcement import reinforce
-from utils import log_settings
+from utils import log_settings, functions as F
 
 logger = log_settings.initialize_logs()
 
@@ -47,6 +47,9 @@ def main(knowledge_base=None, input_file=None):
     logger.info('Running reinforcement step over matching list...')
     run_reinforcement(matching_list, k_base)
     logger.info('Reinforcement step done!')
+
+    logger.info('Saving results...')
+    F.save_results(matching_list)
 
 if __name__ == "__main__":
     try:
