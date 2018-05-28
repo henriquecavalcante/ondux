@@ -22,8 +22,6 @@ class PSM:
     def __init__(self, matching_list, k_base):
         self.t_matrix = self.init_t_matrix(k_base.get_attributes(), matching_list)
         self.p_matrix = self.init_p_matrix(k_base.get_attributes(), matching_list)
-        F.print_matrix(self.t_matrix)
-        F.print_matrix(self.p_matrix)
 
     def init_t_matrix(self, attribute_list, matching_list):
         '''Initialize transitions matrix'''

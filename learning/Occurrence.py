@@ -4,7 +4,7 @@ class Occurrence:
 
     Occurrences have the following properties:
         term: A string representing the occurrence name.
-        number: A counter representing the number of occurrences of a term.
+        frequency: A counter representing the number of occurrences of a term.
     '''
 
     def __init__(self, term):

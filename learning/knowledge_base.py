@@ -11,6 +11,7 @@ from .occurrence import Occurrence
 
 logger = logging.getLogger(__name__)
 
+
 class KnowledgeBase:
     """A KnowledgeBase has the following properties:
 
@@ -25,6 +26,7 @@ class KnowledgeBase:
         """Return a Knowledge Base object"""
         self.k_base = {}
         self.inverted_k_base = {}
+        self.co_occurrences = {}
         self.attribute_statistics = {}
         self.init_kb(kb_file)
         self.init_inverted_k_base()
@@ -38,7 +40,24 @@ class KnowledgeBase:
         for item in data:
             attribute = item.tag
             value = F.remove_stop_words(F.normalize_str(item.text))
-            for term in value.split():
+
+            # Check if a value contains only stop words
+            if not value:
+                continue
+
+            terms = value.split()
+            i = 0
+            while i < len(terms)-1:
+                if terms[i] in self.co_occurrences:
+                    if (terms[i+1],attribute) not in self.co_occurrences[terms[i]]:
+                        self.co_occurrences[terms[i]].append((terms[i+1], attribute))
+                else:
+                    self.co_occurrences[terms[i]] = []
+                i += 1
+            if terms[-1] not in self.co_occurrences:
+                self.co_occurrences[terms[-1]] = []
+
+            for term in terms:
                 occurrence = Occurrence(term)
                 if attribute in self.k_base:
                     if term not in [obj.term for obj in self.k_base[attribute]]:

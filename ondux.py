@@ -6,9 +6,11 @@ from blocking.blocking import extract_blocks
 from learning.knowledge_base import KnowledgeBase
 from matching.matching import match_blocks
 from reinforcement.psm import PSM
+from reinforcement.reinforcement import reinforce
 from utils import log_settings
 
 logger = log_settings.initialize_logs()
+
 
 def create_k_base(kb):
     '''Create knowledge base from the input file'''
@@ -44,7 +46,7 @@ def main(knowledge_base=None, input_file=None):
 
     logger.info('Running reinforcement step over matching list...')
     run_reinforcement(matching_list, k_base)
-    # logger.info('Reinforcement step done!')
+    logger.info('Reinforcement step done!')
 
 if __name__ == "__main__":
     try:
