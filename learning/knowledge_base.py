@@ -20,6 +20,7 @@ class KnowledgeBase:
         inverted_k_base: A dict representing the all terms of the Knowledge Base and
         the attributes they are present.
         attribute_statistics: A dict representing each attribute statistics.
+        co_occurrences: A dict representing the terms and their co-occurrences.
     """
 
     def __init__(self, kb_file):

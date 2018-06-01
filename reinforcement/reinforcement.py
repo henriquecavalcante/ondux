@@ -33,7 +33,7 @@ def compute_reinforment_score(blocks, psm, attribute_index):
     for i in range(len(blocks)-1):
         current_block = blocks[i]
         next_block = blocks[i+1]
-        if current_block.label == 'none' or next_block.label == 'none':
+        if current_block.label is 'none' or next_block.label is 'none':
             continue
         current_block.reinforcement_score = psm.t_matrix[attribute_index[current_block.label]][attribute_index[next_block.label]]
 
@@ -46,8 +46,8 @@ def sum_t_matrix(t_matrix):
     for i in range(len(t_matrix)-1):
         s[t_matrix[0][i+1]] = 0
 
-    for i in range(len(t_matrix)-1):
-        for j in range(len(t_matrix)-1):
+    for i in range(len(t_matrix)):
+        for j in range(len(t_matrix)):
             if i > 0 and j > 0:
                 s[t_matrix[0][i]] += t_matrix[i][j]
 

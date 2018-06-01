@@ -74,7 +74,7 @@ def save_results(results):
             for result in results:
                 line = ''
                 for block in result:
-                    line += '<{0}>{1}</{0}>'.format(block.label, block.value)
+                    line += '<{0}>{1}</{0}>'.format(block.label, block.raw_value)
                 f.write(line + '\n')
     except IOError as error:
         logger.error('It was not possible to create results file. Cause: ' + error.strerror)
