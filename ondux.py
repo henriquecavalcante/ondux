@@ -3,11 +3,13 @@ import sys
 from pprint import pprint
 
 from blocking.blocking import extract_blocks
+from evaluation.results_evaluation import ResultsEvaluation as RE
 from learning.knowledge_base import KnowledgeBase
 from matching.matching import match_blocks
 from reinforcement.psm import PSM
 from reinforcement.reinforcement import reinforce
-from utils import log_settings, functions as F
+from utils import functions as F
+from utils import log_settings
 
 logger = log_settings.initialize_logs()
 
@@ -31,7 +33,11 @@ def run_reinforcement(matching_list, k_base):
     psm = PSM(matching_list, k_base)
     reinforce(matching_list, psm, k_base.get_attributes())
 
-def main(knowledge_base=None, input_file=None):
+def run_evaluation(reference_file, results_file, attributes):
+    '''Evaluate the results of the experiments'''
+    RE.evaluate(reference_file, results_file, attributes)
+
+def main(knowledge_base=None, input_file=None, reference_file=None):
     '''Run ONDUX extraction steps'''
     logger.info('Creating knowledge base...')
     k_base = create_k_base(knowledge_base)
@@ -52,12 +58,16 @@ def main(knowledge_base=None, input_file=None):
     logger.info('Saving results...')
     F.save_results(matching_list)
 
+    logger.info('Evaluating results...')
+    run_evaluation(reference_file, 'results.xml', k_base.get_attributes())
+
 if __name__ == "__main__":
     try:
         knowledge_base = sys.argv[1]
         input_file = sys.argv[2]
+        reference_file = sys.argv[3]
     except IndexError as e:
         logger.error('Missing arguments. When running ondux you must '
         'pass as parameter the knowledge base and the input file.')
     finally:
-        main(knowledge_base, input_file)
+        main(knowledge_base, input_file, reference_file)

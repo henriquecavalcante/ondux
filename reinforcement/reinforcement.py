@@ -25,7 +25,7 @@ def reinforce(matching_list, psm, attribute_list):
             for block in blocks:
                 if block.label in attribute:
                     score = 1 - ((1 - block.matching_score) * (1 - block.reinforcement_score))
-                    print(block.value + ' | ' + block.label + ' | ' + repr(block.matching_score) + ' | ' + repr(block.reinforcement_score) + ' | ' + repr(score))
+                    # print(block.value + ' | ' + block.label + ' | ' + repr(block.matching_score) + ' | ' + repr(block.reinforcement_score) + ' | ' + repr(score))
 
 
 def compute_reinforment_score(blocks, psm, attribute_index):
@@ -39,8 +39,9 @@ def compute_reinforment_score(blocks, psm, attribute_index):
 
 
 def sum_t_matrix(t_matrix):
-    print('\n----- MATRIX OF TRANSITIONS -----')
-    F.print_matrix(t_matrix)
+    # TEMP
+    # print('\n----- MATRIX OF TRANSITIONS -----')
+    # F.print_matrix(t_matrix)
     s = {}
 
     for i in range(len(t_matrix)-1):
@@ -50,6 +51,6 @@ def sum_t_matrix(t_matrix):
         for j in range(len(t_matrix)):
             if i > 0 and j > 0:
                 s[t_matrix[0][i]] += t_matrix[i][j]
-
-    print('\n----- SUM OF TRANSITIONS FOR EACH ATTRIBUTE -----')
-    pprint(s)
+    # TEMP
+    # print('\n----- SUM OF TRANSITIONS FOR EACH ATTRIBUTE -----')
+    # pprint(s)

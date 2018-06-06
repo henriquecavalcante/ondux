@@ -12,8 +12,6 @@ def extract_blocks(input_file, k_base):
     r_input = [r for r in F.read_input(input_file)]
     normalized_input = [F.remove_stop_words(F.normalize_str(v))
                         for v in r_input]
-    print(len(r_input))
-    print(len(normalized_input))
     blocks = []
     for raw_terms, record in zip(r_input, normalized_input):
         blocks.append(build_blocks(record.split(), raw_terms.split(), k_base))

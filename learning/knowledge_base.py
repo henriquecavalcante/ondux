@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class KnowledgeBase:
-    """A KnowledgeBase has the following properties:
+    '''A KnowledgeBase has the following properties:
 
     Attributes:
         k_base: A dict representing the attributes and their list of terms.
@@ -21,10 +21,10 @@ class KnowledgeBase:
         the attributes they are present.
         attribute_statistics: A dict representing each attribute statistics.
         co_occurrences: A dict representing the terms and their co-occurrences.
-    """
+    '''
 
     def __init__(self, kb_file):
-        """Return a Knowledge Base object"""
+        '''Return a Knowledge Base object'''
         self.k_base = {}
         self.inverted_k_base = {}
         self.co_occurrences = {}

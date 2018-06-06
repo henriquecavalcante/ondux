@@ -56,7 +56,7 @@ def get_stop_words():
         sys.exit(1)
 
 def remove_stop_words(text):
-    '''Remove the stop words of a string and return the list of tokens'''
+    '''Remove the stop words of a string'''
     return ' '.join([word for word in text.split() if word not in get_stop_words()])
 
 def print_matrix(matrix):
