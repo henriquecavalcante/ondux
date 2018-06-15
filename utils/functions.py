@@ -71,21 +71,10 @@ def save_results(results):
     '''Create XML file to save the results after running ONDUX'''
     try:
         with open('results.xml', 'w') as f:
-            for blocks in results:
+            for result in results:
                 line = ''
-                i = 0
-                while i < (len(blocks)-1):
-                    if blocks[i].label == blocks[i+1].label:
-                        temp = ''
-                        while i < (len(blocks)-1) and blocks[i].label == blocks[i+1].label:
-                            temp += blocks[i].raw_value
-                            temp += ' '
-                            i += 1
-                        temp += blocks[i].raw_value
-                        line += '<{0}>{1}</{0}>'.format(blocks[i].label, temp.strip())
-                    else:
-                        line += '<{0}>{1}</{0}>'.format(blocks[i].label, blocks[i].raw_value)
-                    i+=1
+                for block in result:
+                        line += '<{0}>{1}</{0}>'.format(block.label, block.raw_value)
                 f.write(line + '\n')
     except IOError as error:
         logger.error('It was not possible to create results file. Cause: ' + error.strerror)

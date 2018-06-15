@@ -68,6 +68,6 @@ if __name__ == "__main__":
         reference_file = sys.argv[3]
     except IndexError as e:
         logger.error('Missing arguments. When running ondux you must '
-        'pass as parameter the knowledge base and the input file.')
+        'pass as parameter the knowledge base, input and reference files.')
     finally:
         main(knowledge_base, input_file, reference_file)

@@ -25,6 +25,7 @@ class PSM:
 
     def init_t_matrix(self, attribute_list, matching_list):
         '''Initialize transitions matrix'''
+        attribute_list.append('none')
         attribute_index = {}
         for i, attr in enumerate(attribute_list):
             attribute_index[attr] = {'id': i + 1, 'transitions': 0}
@@ -41,12 +42,8 @@ class PSM:
             for n in range(len(block)-1):
                 current_label = block[n].label
                 next_label = block[n+1].label
-                if current_label == 'none' or next_label == 'none':
-                    continue
-
                 i = attribute_index[current_label]['id']
                 j = attribute_index[next_label]['id']
-
                 attribute_index[current_label]['transitions'] += 1
                 t_matrix[i][j] += 1
 
@@ -61,6 +58,7 @@ class PSM:
 
     def init_p_matrix(self, attribute_list, matching_list):
         '''Initialize positioning matrix'''
+        attribute_list.append('none')
         attribute_index = {}
         for i, attr in enumerate(attribute_list):
             attribute_index[attr] = i + 1
@@ -78,12 +76,8 @@ class PSM:
         for block in matching_list:
             for n in range(len(block)):
                 current_label = block[n].label
-                if current_label == 'none':
-                    continue
-
                 i = attribute_index[current_label]
                 j = n+1
-
                 p_matrix[i][j] += 1
                 position_index[n][j]+=1
 
