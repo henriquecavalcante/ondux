@@ -4,11 +4,7 @@ This is a Python implementation of ONDUX (On Demand Unsupervised Information Ext
 
 Reference: https://dl.acm.org/citation.cfm?id=1807254
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
+## Requirements
 
 To use ONDUX you will need to have installed
 
@@ -16,22 +12,13 @@ To use ONDUX you will need to have installed
 Python 3.6
 ```
 
-## Running the tests
+## Execution Instructions
 
-To perfom the tests on ONDUX, run the following command
+To perform tests on ONDUX method, open the project folder on the terminal and type the following command:
 
 ```
-python ondux knowledge_base_file.xml input_file.txt
+python ondux.py /path/to/knowledge_base_file.xml /path/to/input_file.txt /path/to/reference_file.xml
 ```
-
-## Authors
-
-* **Eli Cortez**
-* **Altigran S. da Silva**
-
-## Contributors
-
-* **Henrique Cavalcante**
 
 ## License
 
