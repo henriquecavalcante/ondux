@@ -110,4 +110,5 @@ testkb.xml
 input.txt
 bin/
 o.txt
-results.xml
+matching_results.xml
+reinforcement_results.xml

@@ -67,13 +67,13 @@ def print_matrix(matrix):
     table = [fmt.format(*row) for row in s]
     print('\n'.join(table))
 
-def save_results(results):
+def save_results(results, file_name):
     '''Create XML file to save the results after running ONDUX'''
     try:
-        with open('results.xml', 'w') as f:
-            for result in results:
+        with open(file_name, 'w') as f:
+            for record in results:
                 line = ''
-                for block in result:
+                for block in record:
                         line += '<{0}>{1}</{0}>'.format(block.label, block.raw_value)
                 f.write(line + '\n')
     except IOError as error:

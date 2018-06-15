@@ -51,15 +51,18 @@ def main(knowledge_base=None, input_file=None, reference_file=None):
     matching_list = run_matching(blocking_list, k_base)
     logger.info('Matching step done!')
 
+    logger.info('Saving results...')
+    F.save_results(matching_list, 'matching_results.xml')
+
     logger.info('Running reinforcement step over matching list...')
     run_reinforcement(matching_list, k_base)
     logger.info('Reinforcement step done!')
 
     logger.info('Saving results...')
-    F.save_results(matching_list)
+    F.save_results(matching_list, 'reinforcement_results.xml')
 
-    logger.info('Evaluating results...')
-    run_evaluation(reference_file, 'results.xml', k_base.get_attributes())
+    logger.info('Evaluating Matching results...')
+    run_evaluation(reference_file, 'matching_results.xml', k_base.get_attributes())
 
 if __name__ == "__main__":
     try:
