@@ -22,6 +22,7 @@ def match_blocks(blocking_list, k_base):
 def classify_block(block, k_base):
     '''Classify a block based on content-based features
     extracted from Knowledge Base'''
+    attribute_score = {}
     max_score = 0
     label = "none"
     attr_list = k_base.get_attributes()
@@ -30,9 +31,10 @@ def classify_block(block, k_base):
             score = CBF.numeric_matching(block.value, attr, k_base)
         else:
             score = CBF.attribute_frequency(block.value, attr, k_base)
+        attribute_score[attr] = score
         if score > max_score:
             max_score = score
             label = attr
-    block.matching_score = max_score
+    block.matching_score = attribute_score
     block.label = label
     return block
