@@ -53,6 +53,7 @@ class ResultsEvaluation:
                 attr_evaluation[attr].recall = right_answers[attr] / reference_stats[attr]
                 attr_evaluation[attr].f_measure = (2*attr_evaluation[attr].precision*attr_evaluation[attr].recall)/(attr_evaluation[attr].precision+attr_evaluation[attr].recall)
 
-        for attr in attr_evaluation:
-            if attr_evaluation[attr].f_measure > 0:
-                print(attr, '\tP: ', attr_evaluation[attr].precision, '\tR: ', attr_evaluation[attr].recall, '\tF: ', attr_evaluation[attr].f_measure)
+        print('{:<15} {:<20} {:<20} {:<18}'.format('Attribute', 'Precision', 'Recall', 'F-Measure'))
+        for k, v in attr_evaluation.items():
+            if v.f_measure > 0:
+                print('{:<15} {:<20} {:<20} {:<18}'.format(k, v.precision, v.recall, v.f_measure))
