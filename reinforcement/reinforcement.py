@@ -23,11 +23,11 @@ def reinforce(matching_list, psm, attribute_list):
                     p_score = psm.p_matrix[attribute_index[attr]][i+1]
                     attribute_score[attr] = (1 - ((1 - current_block.matching_score[attr])*(1 - t_score)*(1 - p_score)))
                 current_block.reinforcement_score = attribute_score
-                print('BLOCK: ', current_block.value)
-                print('LABEL: ', current_block.label)
-                pprint(current_block.reinforcement_score)
-                print('NEW LABEL: ', current_block.get_top_reinforcement_score())
-                print('\n')
+                # print('BLOCK: ', current_block.value)
+                # print('LABEL: ', current_block.label)
+                # pprint(current_block.reinforcement_score)
+                # print('NEW LABEL: ', current_block.get_top_reinforcement_score())
+                # print('\n')
             # else:
             #     previous_block = record[i-1]
             #     next_block = record[i+1]

@@ -28,23 +28,23 @@ class ResultsEvaluation:
 
             for reference_block in reference_record:
                 if reference_block.tag not in reference_stats:
-                    reference_stats[reference_block.tag] = 1
+                    reference_stats[reference_block.tag] = len(reference_block.text.split())
                 else:
-                    reference_stats[reference_block.tag] += 1
+                    reference_stats[reference_block.tag] += len(reference_block.text.split())
 
             for result_block in result_record:
                 if result_block.tag is not 'none' and result_block.tag not in results_stats:
-                    results_stats[result_block.tag] = 1
+                    results_stats[result_block.tag] = len(result_block.text.split())
                 else:
-                    results_stats[result_block.tag] += 1
+                    results_stats[result_block.tag] += len(result_block.text.split())
 
             for result_block in result_record:
                 for reference_block in reference_record:
-                    if F.normalize_str(result_block.text) == F.normalize_str(reference_block.text) and result_block.tag == reference_block.tag:
+                    if F.normalize_str(result_block.text) in F.normalize_str(reference_block.text) and result_block.tag == reference_block.tag:
                         if result_block.tag not in right_answers:
-                            right_answers[result_block.tag] = 1
+                            right_answers[result_block.tag] = len(result_block.text.split())
                         else:
-                            right_answers[result_block.tag] += 1
+                            right_answers[result_block.tag] += len(result_block.text.split())
                         break
 
         for attr in attributes:
