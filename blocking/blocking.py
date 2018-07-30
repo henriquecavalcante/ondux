@@ -17,6 +17,7 @@ def extract_blocks(input_file, k_base):
         blocks.append(build_blocks(record.split(), raw_terms.split(), k_base))
     return blocks
 
+
 def build_blocks(terms, raw_terms, k_base):
     '''Build a set of blocks for a string'''
     blocks_list = []
@@ -25,7 +26,7 @@ def build_blocks(terms, raw_terms, k_base):
     j = 1
     while j < len(terms):
         if not co_occurs(terms[j-1], terms[j], k_base):
-            blocks_list.append(Block('',''))
+            blocks_list.append(Block('', ''))
             i += 1
         if blocks_list[i].value in '':
             blocks_list[i].value += terms[j]
@@ -35,6 +36,7 @@ def build_blocks(terms, raw_terms, k_base):
             blocks_list[i].raw_value += ' ' + raw_terms[j]
         j += 1
     return blocks_list
+
 
 def co_occurs(current_term, next_term, k_base):
     '''Verify if the current term and next term are known

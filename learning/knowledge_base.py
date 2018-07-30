@@ -50,8 +50,9 @@ class KnowledgeBase:
             i = 0
             while i < len(terms)-1:
                 if terms[i] in self.co_occurrences:
-                    if (terms[i+1],attribute) not in self.co_occurrences[terms[i]]:
-                        self.co_occurrences[terms[i]].append((terms[i+1], attribute))
+                    if (terms[i+1], attribute) not in self.co_occurrences[terms[i]]:
+                        self.co_occurrences[terms[i]].append(
+                            (terms[i+1], attribute))
                 else:
                     self.co_occurrences[terms[i]] = []
                 i += 1
@@ -64,7 +65,8 @@ class KnowledgeBase:
                     if term not in [obj.term for obj in self.k_base[attribute]]:
                         self.k_base[attribute].append(occurrence)
                     else:
-                        occ = [v for v in self.k_base[attribute] if v.term == term]
+                        occ = [v for v in self.k_base[attribute]
+                               if v.term == term]
                         occ[0].frequency += 1
                 else:
                     self.k_base[attribute] = [occurrence]
@@ -83,12 +85,14 @@ class KnowledgeBase:
             most_commom = self.get_most_common_term_by_attribute(attr)
             avg = 0.0
             stdev = 0.0
-            numeric_values = [int(v.term) for v in self.k_base[attr] if re.match(r'^\d+$', v.term)]
+            numeric_values = [
+                int(v.term) for v in self.k_base[attr] if re.match(r'^\d+$', v.term)]
             if len(numeric_values):
                 avg = statistics.mean(numeric_values)
             if len(numeric_values) > 1:
                 stdev = statistics.stdev(numeric_values)
-            self.attribute_statistics[attr] = Attribute(attr, avg, stdev, most_commom)
+            self.attribute_statistics[attr] = Attribute(
+                attr, avg, stdev, most_commom)
 
     def get_most_common_term_by_attribute(self, attr):
         '''Get the highest frequency of any term among the values of A'''
@@ -98,7 +102,8 @@ class KnowledgeBase:
     def get_term_frequency_by_attribute(self, term, attr):
         '''Get the number of distinct values of attribute A that contain the term t'''
         if term in self.inverted_k_base:
-            frequency = [v[1] for v in self.inverted_k_base[term] if v[0] == attr]
+            frequency = [v[1]
+                         for v in self.inverted_k_base[term] if v[0] == attr]
             if len(frequency):
                 return frequency[0]
         return 0

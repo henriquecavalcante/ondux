@@ -3,6 +3,7 @@ import math
 
 logger = logging.getLogger(__name__)
 
+
 class ContentBasedFeatures:
     '''
     Represent the content based features that can be
@@ -21,7 +22,8 @@ class ContentBasedFeatures:
         terms = canditate_value.split()
         sum_fitness = 0
         for term in terms:
-            sum_fitness += ContentBasedFeatures.fitness(term, attribute, k_base)
+            sum_fitness += ContentBasedFeatures.fitness(
+                term, attribute, k_base)
         try:
             return sum_fitness/len(terms)
         except ZeroDivisionError:

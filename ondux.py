@@ -18,14 +18,17 @@ def create_k_base(kb):
     '''Create knowledge base from the input file'''
     return KnowledgeBase(kb)
 
+
 def run_blocking(input_file, k_base):
     '''Segment input file in units called blocks'''
     return extract_blocks(input_file, k_base)
+
 
 def run_matching(blocks_list, k_base):
     '''Associate blocks to labels using content-based
     features learned from KB'''
     return match_blocks(blocks_list, k_base)
+
 
 def run_reinforcement(matching_list, k_base):
     '''Reinforce Matching outcome taking into consideration
@@ -33,9 +36,11 @@ def run_reinforcement(matching_list, k_base):
     psm = PSM(matching_list, k_base)
     reinforce(matching_list, psm, k_base.get_attributes())
 
+
 def run_evaluation(reference_file, results_file, attributes):
     '''Evaluate the results of the experiments'''
     RE.evaluate(reference_file, results_file, attributes)
+
 
 def main(knowledge_base=None, input_file=None, reference_file=None):
     '''Run ONDUX extraction steps'''
@@ -62,10 +67,13 @@ def main(knowledge_base=None, input_file=None, reference_file=None):
     F.save_results(matching_list, 'reinforcement_results.xml')
 
     logger.info('Evaluating Matching results...')
-    run_evaluation(reference_file, 'matching_results.xml', k_base.get_attributes())
+    run_evaluation(reference_file, 'matching_results.xml',
+                   k_base.get_attributes())
 
     logger.info('Evaluating Reinforcement results...')
-    run_evaluation(reference_file, 'reinforcement_results.xml', k_base.get_attributes())
+    run_evaluation(reference_file, 'reinforcement_results.xml',
+                   k_base.get_attributes())
+
 
 if __name__ == "__main__":
     try:
@@ -74,6 +82,6 @@ if __name__ == "__main__":
         reference_file = sys.argv[3]
     except IndexError as e:
         logger.error('Missing arguments. When running ondux you must '
-        'pass as parameter the knowledge base, input and reference files.')
+                     'pass as parameter the knowledge base, input and reference files.')
     finally:
         main(knowledge_base, input_file, reference_file)

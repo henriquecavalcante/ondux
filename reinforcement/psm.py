@@ -20,8 +20,10 @@ class PSM:
     '''
 
     def __init__(self, matching_list, k_base):
-        self.t_matrix = self.init_t_matrix(k_base.get_attributes(), matching_list)
-        self.p_matrix = self.init_p_matrix(k_base.get_attributes(), matching_list)
+        self.t_matrix = self.init_t_matrix(
+            k_base.get_attributes(), matching_list)
+        self.p_matrix = self.init_p_matrix(
+            k_base.get_attributes(), matching_list)
 
     def init_t_matrix(self, attribute_list, matching_list):
         '''Initialize transitions matrix'''
@@ -31,7 +33,8 @@ class PSM:
             attribute_index[attr] = {'id': i + 1, 'transitions': 0}
 
         matrix_size = len(attribute_list)+1
-        t_matrix = [[0 for i in range(matrix_size)] for j in range(matrix_size)]
+        t_matrix = [[0 for i in range(matrix_size)]
+                    for j in range(matrix_size)]
 
         for i in range(matrix_size-1):
             t_matrix[0][i+1] = attribute_list[i]
@@ -51,8 +54,9 @@ class PSM:
         # by the total number of transitions starting from label i
         for i in range(matrix_size-1):
             for j in range(matrix_size-1):
-                if t_matrix[i+1][j+1]>0:
-                    t_matrix[i+1][j+1] /= attribute_index[t_matrix[i+1][0]]['transitions']
+                if t_matrix[i+1][j+1] > 0:
+                    t_matrix[i+1][j+1] /= attribute_index[t_matrix[i+1]
+                                                          [0]]['transitions']
 
         return t_matrix
 
@@ -66,7 +70,7 @@ class PSM:
         rows = len(attribute_list)+1
         cols = max([len(v) for v in matching_list])+1
         p_matrix = [[0 for i in range(cols)] for j in range(rows)]
-        position_index = [{i+1:0} for i in range(cols-1)]
+        position_index = [{i+1: 0} for i in range(cols-1)]
 
         for i in range(rows-1):
             p_matrix[i+1][0] = attribute_list[i]
@@ -79,11 +83,11 @@ class PSM:
                 i = attribute_index[current_label]
                 j = n+1
                 p_matrix[i][j] += 1
-                position_index[n][j]+=1
+                position_index[n][j] += 1
 
         for i in range(rows-1):
             for j in range(cols-1):
-                if p_matrix[i+1][j+1]>0:
+                if p_matrix[i+1][j+1] > 0:
                     p_matrix[i+1][j+1] /= position_index[j][j+1]
 
         return p_matrix
