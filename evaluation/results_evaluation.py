@@ -140,3 +140,4 @@ class ResultsEvaluation:
         print('----------------------------------------------------------------------------')
         print('{:<20} {:<20} {:<18}'.format('Precision', 'Recall', 'F-Measure'))
         print('{:<20} {:<20} {:<18}'.format(precision, recall, f_measure))
+        print()

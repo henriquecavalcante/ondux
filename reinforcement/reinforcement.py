@@ -17,27 +17,33 @@ def reinforce(matching_list, psm, attribute_list):
         while i < len(record):
             attribute_score = init_attribute_score(attribute_list)
             current_block = record[i]
-            if current_block.label is not 'none': # and next_block.label is not 'none':
+            if current_block.label is not 'none':
                 for attr in attribute_list:
-                    t_score = psm.t_matrix[attribute_index[current_block.label]][attribute_index[attr]]
+                    t_score = psm.t_matrix[attribute_index[current_block.label]
+                                           ][attribute_index[attr]]
                     p_score = psm.p_matrix[attribute_index[attr]][i+1]
-                    attribute_score[attr] = (1 - ((1 - current_block.matching_score[attr])*(1 - t_score)*(1 - p_score)))
-                current_block.reinforcement_score = attribute_score
-                # print('BLOCK: ', current_block.value)
-                # print('LABEL: ', current_block.label)
-                # pprint(current_block.reinforcement_score)
-                # print('NEW LABEL: ', current_block.get_top_reinforcement_score())
-                # print('\n')
-            # else:
-            #     previous_block = record[i-1]
-            #     next_block = record[i+1]
-            #     t_score = psm.t_matrix[attribute_index[previous_block.label]][attribute_index[next_block.label]]
-            #     p_score = psm.p_matrix[attribute_index[previous_block.label]][i+1]
-            #     attribute_score[previous_block.label] = (1 -((1 - t_score)*(1 - p_score))
-                # for attr in attribute_list:
-                #     p_score = psm.p_matrix[attribute_index[attr]][i+1]
-                #     attribute_score[attr] = (1 - (1 - p_score))
-                #     current_block.label = max(attribute_score.items(), key=operator.itemgetter(1))[0]
+                    attribute_score[attr] = (
+                        1 - ((1 - current_block.matching_score[attr])*(1 - t_score)*(1 - p_score)))
+                # current_block.reinforcement_score = attribute_score
+                # current_block.label = current_block.get_top_reinforcement_score()
+            else:
+                if i > 0:
+                    previous_block = record[i-1]
+                    for attr in attribute_list:
+                        t_score = psm.t_matrix[attribute_index[previous_block.label]
+                                               ][attribute_index[attr]]
+                        p_score = psm.p_matrix[attribute_index[attr]][i+1]
+                        attribute_score[attr] = (
+                            1 - ((1 - previous_block.matching_score[attr])*(1 - t_score)*(1 - p_score)))
+                    current_block.reinforcement_score = attribute_score
+                    current_block.label = current_block.get_top_reinforcement_score()
+                else:
+                    for attr in attribute_list:
+                        p_score = psm.p_matrix[attribute_index[attr]][1]
+                        attribute_score[attr] = (
+                            1 - ((1 - current_block.matching_score[attr])*(1 - p_score)))
+                    current_block.reinforcement_score = attribute_score
+                    current_block.label = current_block.get_top_reinforcement_score()
             i += 1
 
 
@@ -46,6 +52,7 @@ def init_attribute_score(attribute_list):
     for attr in attribute_list:
         attribute_score[attr] = 0
     return attribute_score
+
 
 def init_attrbute_index(attribute_list):
     attribute_index = {}

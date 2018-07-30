@@ -64,6 +64,9 @@ def main(knowledge_base=None, input_file=None, reference_file=None):
     logger.info('Evaluating Matching results...')
     run_evaluation(reference_file, 'matching_results.xml', k_base.get_attributes())
 
+    logger.info('Evaluating Reinforcement results...')
+    run_evaluation(reference_file, 'reinforcement_results.xml', k_base.get_attributes())
+
 if __name__ == "__main__":
     try:
         knowledge_base = sys.argv[1]

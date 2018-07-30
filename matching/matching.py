@@ -8,6 +8,7 @@ from .content_based import ContentBasedFeatures as CBF
 
 logger = logging.getLogger(__name__)
 
+
 def match_blocks(blocking_list, k_base):
     '''Associate each block generated in the Blocking step
     with an attribute represented in the knowledge base'''
@@ -18,6 +19,7 @@ def match_blocks(blocking_list, k_base):
             labeled_blocks.append(classify_block(block, k_base))
         matching_blocks.append(labeled_blocks)
     return matching_blocks
+
 
 def classify_block(block, k_base):
     '''Classify a block based on content-based features
